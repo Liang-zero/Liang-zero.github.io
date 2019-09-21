@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="vvVgSQUzPU">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="骑士恨煎蛋，骑士恨孜然">
+    
+    <title>
+       python基础篇 -  猪都笑哭了的博客
+    </title>
+    <link rel="stylesheet" href="/css/style.css"> 
+    
+      <link rel="icon" href="/images/favicon.ico">
+    
+  </head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> Home </a></li>
+            
+              <li><a href="/archives"> Archive </a></li>
+            
+              <li><a href="/about"> About </a></li>
+            
+              <li><a href="/atom.xml"> RSS </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search">
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一些函数的使用方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">一些函数的使用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义一个字符串：str-”abcdecfh”"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">定义一个字符串：str=”abcdecfh”</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、字符串的判断"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、字符串的判断</span></a></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、字符串的扩充"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、字符串的扩充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#两边扩充"><span class="post-toc-number">2.0.0.1.</span> <span class="post-toc-text">两边扩充</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#单边扩充"><span class="post-toc-number">2.0.0.2.</span> <span class="post-toc-text">单边扩充</span></a></li></ol></li> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            python基础篇
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2019-09-21T15:36:13.251Z" itemprop="datePublished">
+            2019-09-21
+        </time>
+        
+        
+    </div>
+    
+    <div class="post-entry">
+        <h2 id="一些函数的使用方法"><a href="#一些函数的使用方法" class="headerlink" title="一些函数的使用方法"></a>一些函数的使用方法</h2><h4 id="定义一个字符串：str-”abcdecfh”"><a href="#定义一个字符串：str-”abcdecfh”" class="headerlink" title="定义一个字符串：str=”abcdecfh”"></a>定义一个字符串：str=”abcdecfh”</h4><h3 id="一、字符串的判断"><a href="#一、字符串的判断" class="headerlink" title="一、字符串的判断"></a>一、字符串的判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">str.upper()  <span class="comment">#字符串大写</span></span><br><span class="line">lower() <span class="comment">#字符串小写</span></span><br><span class="line">capitalize（）<span class="comment">#首字母大写</span></span><br><span class="line">title（） <span class="comment"># 所有单词首字母大写</span></span><br><span class="line">isdecimal() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isdigit()<span class="comment">#判断是不是数字类型</span></span><br><span class="line">isnumeric() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isalpha() <span class="comment">#判断是不是纯字母</span></span><br><span class="line">isalnum() <span class="comment">#判断是不是字母加数字，但是字符串中不能有空格</span></span><br><span class="line">isspace() <span class="comment">#判断是不是空白符</span></span><br><span class="line">isidentifier() <span class="comment">#判断首字母的规范</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、字符串的扩充"><a href="#二、字符串的扩充" class="headerlink" title="二、字符串的扩充"></a>二、字符串的扩充</h2><h5 id="两边扩充"><a href="#两边扩充" class="headerlink" title="两边扩充"></a>两边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.center(7,<span class="string">"="</span>) <span class="comment">#两边扩充“=”</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="单边扩充"><a href="#单边扩充" class="headerlink" title="单边扩充"></a>单边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单边扩充ljust:左对齐右扩充  rjust:右对齐左扩充</span></span><br><span class="line">str.ljust (8,<span class="string">"-"</span>) </span><br><span class="line">str.rjust(8,<span class="string">"-"</span>)</span><br><span class="line">str.zfill(6)    </span><br><span class="line"><span class="string">"+100"</span>.zfill(4) <span class="comment">#结果：+0100（“-”的同理）</span></span><br><span class="line">str.zfill(6).count(<span class="string">"ab"</span>)<span class="comment">#统计某一个值出现的次数</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2)<span class="comment">#参数2代表从第几个开始找</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2,6) <span class="comment">#6代表到哪里结束</span></span><br><span class="line">str.endswith(<span class="string">"fgh"</span>,<span class="string">"z"</span>,<span class="string">"a"</span>)、str.startswith(<span class="string">"abc"</span>) <span class="comment">#用什么开头用什么结尾,一个满足为Ture</span></span><br><span class="line">str.find(<span class="string">"abc"</span>,1) 、rfind()<span class="comment">#从左找</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">骑士恨煎蛋，骑士恨孜然</div>
+    <img id="top" src="/images/up-circle.svg" alt="top">
+    
+  </body>
+</html>
+<!-- 加载主题脚本文件 -->
+<script src="/scripts/utone.js"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
