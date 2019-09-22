@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="当看到一只鸟走起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子
+鸭子类型在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如，在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为鸭的对象，并调用它的走和叫方法。
+举例1234567891011121314151617cl">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="猪都笑哭了的博客">
+        <meta property="og:title" content="python的鸭子类型和单例模式">
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>猪都笑哭了的博客</title>
+    <title>python的鸭子类型和单例模式 - 猪都笑哭了的博客</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -111,17 +115,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">猪都笑哭了的博客</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2019/09/22/python的鸭子类型和单例模式/">
                 python的鸭子类型和单例模式
@@ -136,9 +137,13 @@
         </div>
     </div>
 
-    
-        <div class="content">
-            <p>当看到一只鸟走起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子</p>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>当看到一只鸟走起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子</p>
 <h2 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h2><p>在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如，在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为鸭的对象，并调用它的走和叫方法。</p>
 <h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line">	def walk(self):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"this man walk like a duck"</span>)</span><br><span class="line">	</span><br><span class="line">	def swim(self):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"this man swim like a duck"</span>)</span><br><span class="line"></span><br><span class="line">def duck(animal):</span><br><span class="line">	animal.walk()</span><br><span class="line">	animal.swim()</span><br><span class="line">p=Person()</span><br><span class="line">duck(p)	</span><br><span class="line">```	</span><br><span class="line"><span class="comment">#### 输出结果为：</span></span><br><span class="line">```bash</span><br><span class="line">this man walk like a duck</span><br><span class="line">this man swim like a duck</span><br></pre></td></tr></table></figure>
 
@@ -152,111 +157,20 @@
 <h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a>使用装饰器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def Singleton(cls):</span><br><span class="line">    _instance = &#123;&#125;</span><br><span class="line">    def _singleton(*args, **kargs):</span><br><span class="line">        <span class="keyword">if</span> cls not <span class="keyword">in</span> _instance:</span><br><span class="line">            _instance[cls] = cls(*args, **kargs)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> _instance[cls]</span><br><span class="line">    <span class="built_in">return</span> _singleton</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Singleton</span><br><span class="line">class A:</span><br><span class="line">    def __init__(self, age):</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">a1 = A(10)</span><br><span class="line">a2 = A(20)</span><br><span class="line"><span class="built_in">print</span>(a1.age)</span><br><span class="line"><span class="built_in">print</span>(a2.age)</span><br></pre></td></tr></table></figure>
 
 <h4 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/22/面向对象思想/">
-                面向对象思想
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-22</span>
-            
-            
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <h2 id="面向过程和面向对象的区别"><a href="#面向过程和面向对象的区别" class="headerlink" title="面向过程和面向对象的区别"></a>面向过程和面向对象的区别</h2><h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><p>1.把完的成某一个需求的 所有步骤 从头到尾 逐步实现<br>2.根据开发要求，将某些功能独立的代码封装成一个又一个函数<br>3.最后完成的代码，就是顺序的调用不同的函数 </p>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>1.注重步骤与过程，不注重职责分工<br>2.如果需求复杂，代码会变得很复杂<br>3.开发复杂项目，没有固定的套路，开发难度很大 </p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>1.在完成某一个需求前，首先确定职责–要做的事(方法)<br>2.根据职责确定不同的对象，在对象内部封装不同的方法(多个)<br>3.最后完成代码，就是顺序的让不同的对象调用不同的方法 </p>
-<h4 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h4><p>1.注重对象和职责，不同的对象承担不同的职责<br>2.更加适合对复杂的需求变化，是专门应对复杂项目的开发，提供的固定套路<br>3.需要在面向过程的基础上，再学习一些面向对象的语法</p>
-<h3 id="面向对象的两个核心概念"><a href="#面向对象的两个核心概念" class="headerlink" title="面向对象的两个核心概念"></a>面向对象的两个核心概念</h3><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><h4 id="类的概念"><a href="#类的概念" class="headerlink" title="类的概念"></a>类的概念</h4><p>类：是对一群具有相同特征或行为的事物的一个统称，是抽象的，不能直接使用(就好比，飞机图纸不能直接飞上天)<br>特征:被称为属性<br>行为:被称为方法<br>类 就相当于制造飞机时的图纸，是一个模板，是负责创建对象的</p>
-<h4 id="类的创建"><a href="#类的创建" class="headerlink" title="类的创建"></a>类的创建</h4><p>类名：满足这类事物的名字(大驼峰命名法)<br>大驼峰命名法：<br>1.每个单词的首字母大写<br>2.单词与单词之间没有下划线<br>2.属性:这个类创建出来的对象有什么样的特征<br>3.方法：这个类创建出来的对象有什么样的行为<br>类名的确定：<br>名词提炼法:分析整个业务流程，出现的名词，通常就是找到的类名<br>定义一个只包含方法的类<br>class 类名：<br>def 方法1(self,参数列表):<br>      pass<br>def 方法2(self,参数列表):<br>      pass<br>方法的定义格式和函数的几乎一样<br>区别在于第一个参数必须是self</p>
-<h4 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h4><p>对象：是由类创建出来的一个具体的存在，可以直接使用(图纸创造出来的飞机，可以飞上天) 由哪一个类创建出来的对象，就拥有哪一个类的定义的属性和方法<br>“对象就相当于用图纸创造出来的飞机” 在程序开发中，应该先有类，再有对象 </p>
-<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>当一个类定义完成之后，要使用这个类来创建对象<br>对象变量 = 类名()</p>
 
-        </div>
+    
+
+    <!-- Comments -->
     
 
 </div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/21/python基础篇/">
-                python基础篇
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-21</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="一些函数的使用方法"><a href="#一些函数的使用方法" class="headerlink" title="一些函数的使用方法"></a>一些函数的使用方法</h2><h4 id="定义一个字符串：str-”abcdecfh”"><a href="#定义一个字符串：str-”abcdecfh”" class="headerlink" title="定义一个字符串：str=”abcdecfh”"></a>定义一个字符串：str=”abcdecfh”</h4><h3 id="一、字符串的判断"><a href="#一、字符串的判断" class="headerlink" title="一、字符串的判断"></a>一、字符串的判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">str.upper()  <span class="comment">#字符串大写</span></span><br><span class="line">lower() <span class="comment">#字符串小写</span></span><br><span class="line">capitalize（）<span class="comment">#首字母大写</span></span><br><span class="line">title（） <span class="comment"># 所有单词首字母大写</span></span><br><span class="line">isdecimal() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isdigit()<span class="comment">#判断是不是数字类型</span></span><br><span class="line">isnumeric() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isalpha() <span class="comment">#判断是不是纯字母</span></span><br><span class="line">isalnum() <span class="comment">#判断是不是字母加数字，但是字符串中不能有空格</span></span><br><span class="line">isspace() <span class="comment">#判断是不是空白符</span></span><br><span class="line">isidentifier() <span class="comment">#判断首字母的规范</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="二、字符串的扩充"><a href="#二、字符串的扩充" class="headerlink" title="二、字符串的扩充"></a>二、字符串的扩充</h2><h5 id="两边扩充"><a href="#两边扩充" class="headerlink" title="两边扩充"></a>两边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.center(7,<span class="string">"="</span>) <span class="comment">#两边扩充“=”</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="单边扩充"><a href="#单边扩充" class="headerlink" title="单边扩充"></a>单边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单边扩充ljust:左对齐右扩充  rjust:右对齐左扩充</span></span><br><span class="line">str.ljust (8,<span class="string">"-"</span>) </span><br><span class="line">str.rjust(8,<span class="string">"-"</span>)</span><br><span class="line">str.zfill(6)    </span><br><span class="line"><span class="string">"+100"</span>.zfill(4) <span class="comment">#结果：+0100（“-”的同理）</span></span><br><span class="line">str.zfill(6).count(<span class="string">"ab"</span>)<span class="comment">#统计某一个值出现的次数</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2)<span class="comment">#参数2代表从第几个开始找</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2,6) <span class="comment">#6代表到哪里结束</span></span><br><span class="line">str.endswith(<span class="string">"fgh"</span>,<span class="string">"z"</span>,<span class="string">"a"</span>)、str.startswith(<span class="string">"abc"</span>) <span class="comment">#用什么开头用什么结尾,一个满足为Ture</span></span><br><span class="line">str.find(<span class="string">"abc"</span>,1) 、rfind()<span class="comment">#从左找</span></span><br></pre></td></tr></table></figure>
-
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/21/python之路——路漫漫兮其修远兮/">
-                python之路——路漫漫兮其修远兮
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-21</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="成功需要自我管理"><a href="#成功需要自我管理" class="headerlink" title="成功需要自我管理"></a>成功需要自我管理</h2><p>当你拼命想完成一件事的时候，你就不再是别人的对手，或者说得更确切一些，别人就不再是你的对手了，不管是谁，只要下了这个决心，他就会立刻觉得增添了无穷的力量，而他的视野也随之开阔了。</p>
-
-        </div>
-    
-
-</div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-
 
 
 </div>
