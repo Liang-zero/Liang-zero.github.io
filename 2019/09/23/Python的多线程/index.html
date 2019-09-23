@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="线程线程（Thread）也叫轻量级进程，是操作系统能够进行运算调度的最小单位，它被包涵在进程之中，是进程中的实际运作单位。线程自己不拥有系统资源，只拥有一点儿在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。一个线程可以创建和撤消另一个线程，同一进程中的多个线程之间可以">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Liang-zero">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Python的多线程">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="猪都笑哭了的博客">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>Python的多线程 - 猪都笑哭了的博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    主页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/09/23/Python的多线程/">
+                Python的多线程
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-09-23</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程（Thread）也叫轻量级进程，是操作系统能够进行运算调度的最小单位，它被包涵在进程之中，是进程中的实际运作单位。线程自己不拥有系统资源，只拥有一点儿在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。一个线程可以创建和撤消另一个线程，同一进程中的多个线程之间可以并发执行。</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>假定有一 7 * 24 小时不停工的工厂，由于其电力有限，一次仅供一个车间使用，当一个车间在生产时，其他车间停工。在这里我们可以理解这个工厂相当于操作系统，供电设备相当于 CPU，一个车间相当于一个进程。</p>
+<p>一个车间里，可以有很多工人。他们协同完成一个任务。车间的空间是工人们共享的，这里一个工人就相当于一个线程，一个进程可以包括多个线程。比如许多房间是每个工人都可以进出的。这象征一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。</p>
+<h2 id="线程锁"><a href="#线程锁" class="headerlink" title="线程锁"></a>线程锁</h2><p>有时候资源有限，比如有些房间最多只能容纳一个人，当一个人占用的时候，其他人就不能进去，只能等待。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</p>
+<h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex ），防止多个线程同时读写某一块内存区域</p>
+<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>还有些房间，可以同时容纳 n 个人，比如厨房。也就是说，如果人数大于 n，多出来的人只能在外面等着。这好比某些内存区域，只能供给固定数目的线程使用。这时的解决方法，就是在门口挂 n 把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（ Semaphore ），用来保证多个线程不会互相冲突。</p>
+<h3 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h3><h4 id="互斥锁-1"><a href="#互斥锁-1" class="headerlink" title="互斥锁"></a>互斥锁</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#互斥锁</span></span><br><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">num=0</span><br><span class="line">lock=threading.Lock()</span><br><span class="line">def task_thread(n):</span><br><span class="line">    global num</span><br><span class="line">    lock.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000000):</span><br><span class="line">        num=num+n</span><br><span class="line">        num=num-n</span><br><span class="line">    lock.release()</span><br><span class="line"></span><br><span class="line">t1=threading.Thread(target=task_thread,args=(1,))</span><br><span class="line">t2=threading.Thread(target=task_thread,args=(2,))</span><br><span class="line">t3=threading.Thread(target=task_thread,args=(3,))</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br><span class="line"><span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>如果不加上lock.acquire()和lock.release()那么结果就是一个不确定的值，因为一个线程没结束下一个线程开启，而此时这个线程取到的结果是中间结果。有了互斥锁就能保证在for循环执行之后再执行开启下一个线程</p>
+<h4 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h4><p>模拟银行办理业务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">semaphore=threading.BoundedSemaphore(5)</span><br><span class="line">def yewubanli(name):</span><br><span class="line">    semaphore.acquire()</span><br><span class="line">    time.sleep(3)</span><br><span class="line">    <span class="built_in">print</span>(f<span class="string">'&#123;time.strftime("%y-%m-%d %H-%M-%S")&#125;,&#123;name&#125;正在办理业务'</span>)</span><br><span class="line">    semaphore.release()</span><br><span class="line"></span><br><span class="line">list=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(12):</span><br><span class="line">    t=Thread(target=yewubanli,args=(i,))</span><br><span class="line">    list.append(t)</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> list:</span><br><span class="line">    a.start()</span><br><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> list:</span><br><span class="line">    b.join()</span><br><span class="line">```	</span><br><span class="line"><span class="comment">#### 分析</span></span><br><span class="line">只允许三个线程线程开启，等有一个线程执行完下一个线程才能开始执行，就好比一个房间只能容纳三个，要等其中一个人出来，下一个人才能进去</span><br><span class="line"></span><br><span class="line"><span class="comment">## 多线程在类的使用方法</span></span><br><span class="line"><span class="comment">### 方法一</span></span><br><span class="line">通过继承Therad，重写run方法来实现</span><br><span class="line">```bash</span><br><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">class MyThread(Thread):</span><br><span class="line">	def __init__(self,n):</span><br><span class="line">		super().__init__()</span><br><span class="line">	</span><br><span class="line">    def run(self):</span><br><span class="line">		<span class="comment">#这里是你要实现的的功能的代码</span></span><br><span class="line">		pass</span><br><span class="line">t1=MyThread(n)</span><br><span class="line">t2=MyThread(n)</span><br><span class="line">t3=MyThread(n)</span><br><span class="line">t1.start()</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>这是另一种重写方法，比较灵活</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">class MyThread(Thread):</span><br><span class="line">	def __init__(self,target,args):</span><br><span class="line">		super().__init__()</span><br><span class="line">		self.target=target</span><br><span class="line">		self.args=args</span><br><span class="line">	</span><br><span class="line">	def run(self):</span><br><span class="line">		self.target(*args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task_thread(n):</span><br><span class="line">	<span class="comment">#这里是你要实现的的功能的代码</span></span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line">t1=MyThread(target=target,args=(1,))	</span><br><span class="line">t2=MyThread(target=target,args=(2,))	</span><br><span class="line">t3=MyThread(target=target,args=(3,))	</span><br><span class="line">t1.start()</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/23/Python的多线程/">Python的多线程</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/22/python的鸭子类型和单例模式/">python的鸭子类型和单例模式</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/22/面向对象思想/">面向对象思想</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/21/python基础篇/">python基础篇</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    人生就像心电图，一帆风顺你是挂了
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
