@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="网络七层协议网络的七层协议由底层到顶层包括：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层
+socket套接字传输层是实现端到端的通信,因此，每一个传输层连接有两个端点。传输层连接的端点叫做套接字（socket）。端口号拼接到IP地址就构成了套接字。所谓套接字，实际上是一个通信端点，每个">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Liang-zero">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="python网络编程">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="猪都笑哭了的博客">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>python网络编程 - 猪都笑哭了的博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    主页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/09/24/python网络编程/">
+                python网络编程
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-09-24</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="网络七层协议"><a href="#网络七层协议" class="headerlink" title="网络七层协议"></a>网络七层协议</h2><p>网络的七层协议由底层到顶层包括：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层</p>
+<h3 id="socket套接字"><a href="#socket套接字" class="headerlink" title="socket套接字"></a>socket套接字</h3><p>传输层是实现端到端的通信,因此，每一个传输层连接有两个端点。传输层连接的端点叫做套接字（socket）。端口号拼接到IP地址就构成了套接字。所谓套接字，实际上是一个通信端点，每个套接字都有一个套接字序号，包括主机的IP地址与一个16位的主机端口号，即形如（主机IP地址：端口号）。例如，如果IP地址是210.37.145.1，而端口号是23，那么得到套接字就是（210.37.145.1：23）</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#打印设备名称和IPV4地址</span></span><br><span class="line">import socket</span><br><span class="line">from binascii import hexlify</span><br><span class="line">def get_computer_info():</span><br><span class="line">    host_name=socket.gethostname()</span><br><span class="line">    <span class="built_in">print</span>(host_name)</span><br><span class="line">    ip_address=socket.gethostbyname(host_name)</span><br><span class="line">    <span class="built_in">print</span>(ip_address)</span><br><span class="line"><span class="comment">#打印远程设备的IP</span></span><br><span class="line">def get_remote_info():</span><br><span class="line">    remote_host=<span class="string">'www.baidu.com'</span></span><br><span class="line">    try:</span><br><span class="line">        ip_address=socket.gethostbyname(remote_host)</span><br><span class="line">    except socket.error as e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'%s:%s'</span>%(remote_host,ip_address))</span><br><span class="line"><span class="comment">#把IPV4地址转换成不同格式</span></span><br><span class="line"><span class="comment">#如果要使用低层网络函数，有时普通的字符串形式的IP地址并不是很有用，需要把它们转换成打包后的32位二进制格式。</span></span><br><span class="line">def convert_ipv4_address():</span><br><span class="line">    <span class="keyword">for</span> ip_address <span class="keyword">in</span> [<span class="string">'127.0.0.1'</span>,<span class="string">'192.168.1.1'</span>]:</span><br><span class="line">        <span class="comment">#inet_aton将地址转换为32位的网络序列IP地址</span></span><br><span class="line">        ip=socket.inet_aton(ip_address)</span><br><span class="line">        <span class="built_in">print</span>(ip)</span><br><span class="line">        <span class="comment">#将二进制IP变为十六进制</span></span><br><span class="line">        ip16=hexlify(ip)</span><br><span class="line">        <span class="built_in">print</span>(ip16)</span><br><span class="line">        <span class="comment">#inet_ntoa与inet_aton相反</span></span><br><span class="line">        f_ip=socket.inet_ntoa(ip)</span><br><span class="line">        <span class="built_in">print</span>(f_ip)</span><br><span class="line">def find_server_name():</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> [<span class="string">'http'</span>,<span class="string">'smtp'</span>]:</span><br><span class="line">        get_port=socket.getservbyname(name,<span class="string">'tcp'</span>)</span><br><span class="line">        <span class="built_in">print</span>(get_port)</span><br><span class="line">    <span class="built_in">print</span>(socket.getservbyname(<span class="string">'domain'</span>,<span class="string">'udp'</span>))</span><br><span class="line">    <span class="keyword">for</span> port <span class="keyword">in</span> [80,25]:</span><br><span class="line">        get_name=socket.getservbyport(port,<span class="string">'tcp'</span>)</span><br><span class="line">        <span class="built_in">print</span>(get_name)</span><br><span class="line">    <span class="built_in">print</span>(socket.getservbyport(53,<span class="string">'udp'</span>))</span><br><span class="line"><span class="comment">#Python的 socket 库提供了将数据在网络字节序和主机字节序之间相互转换的函数。ntohl()和htonl()</span></span><br><span class="line">def convert_integer():</span><br><span class="line">    data=1234</span><br><span class="line">    <span class="comment">#Long host byte order,stort host byte order</span></span><br><span class="line">    <span class="built_in">print</span>(socket.ntohl(data),socket.ntohs(data))</span><br><span class="line">    <span class="comment">#Long Network byte order,short Network byte order</span></span><br><span class="line">    <span class="built_in">print</span>(socket.htonl(data),socket.htons(data))</span><br><span class="line">def test_socket_timeout():</span><br><span class="line">    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">    <span class="built_in">print</span>(s.gettimeout())</span><br><span class="line">    s.settimeout(100)</span><br><span class="line">    <span class="built_in">print</span>(s.gettimeout())</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"打印设备名称和IPV4地址"</span>)</span><br><span class="line">    get_computer_info()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"打印远程设备的IP"</span>)</span><br><span class="line">    get_remote_info()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"把IPV4地址转换成不同格式"</span>)</span><br><span class="line">    convert_ipv4_address()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"通过指定的端口和协议找到服务名"</span>)</span><br><span class="line">    find_server_name()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"主机字节序和网络字节序之间相互转换"</span>)</span><br><span class="line">    convert_integer()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"设定并获取默认的套接字超时时间"</span>)</span><br><span class="line">    test_socket_timeout()</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果如下："><a href="#结果如下：" class="headerlink" title="结果如下："></a>结果如下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">打印设备名称和IPV4地址</span><br><span class="line">LAPTOP-2QSFJCLP</span><br><span class="line">192.168.223.1</span><br><span class="line">打印远程设备的IP</span><br><span class="line">www.baidu.com:183.232.231.174</span><br><span class="line">把IPV4地址转换成不同格式</span><br><span class="line">b<span class="string">'\x7f\x00\x00\x01'</span></span><br><span class="line">b<span class="string">'7f000001'</span></span><br><span class="line">127.0.0.1</span><br><span class="line">b<span class="string">'\xc0\xa8\x01\x01'</span></span><br><span class="line">b<span class="string">'c0a80101'</span></span><br><span class="line">192.168.1.1</span><br><span class="line">通过指定的端口和协议找到服务名</span><br><span class="line">80</span><br><span class="line">25</span><br><span class="line">53</span><br><span class="line">http</span><br><span class="line">smtp</span><br><span class="line">domain</span><br><span class="line">主机字节序和网络字节序之间相互转换</span><br><span class="line">3523477504 53764</span><br><span class="line">3523477504 53764</span><br><span class="line">设定并获取默认的套接字超时时间</span><br><span class="line">None</span><br><span class="line">100.0</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/24/python网络编程/">python网络编程</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/23/Python的多线程/">Python的多线程</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/22/python的鸭子类型和单例模式/">python的鸭子类型和单例模式</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/22/面向对象思想/">面向对象思想</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    人生就像心电图，一帆风顺你是挂了
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
