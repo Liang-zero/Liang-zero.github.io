@@ -1,435 +1,997 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
-<!-- Head tag -->
+
 <head><meta name="generator" content="Hexo 3.9.0">
-
     <meta charset="utf-8">
+    <meta name="keywords" content="Noback">
+    <meta name="description" content="Noback">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Noback</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!--Description-->
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
     
-
-    <!--Author-->
-    
-        <meta name="author" content="Liang-zero">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="猪都笑哭了的博客">
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="猪都笑哭了的博客">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="website">
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary">
-    
-
-    <!-- Title -->
-    
-    <title>猪都笑哭了的博客</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    主页
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Noback</span>
                 </a>
-            </li>
+            </div>
             
-            <li class="menu-item">
-                <a href="/archives">
-                    档案
-                </a>
-            </li>
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Noback</div>
+        <div class="logo-desc">
             
-        </ul>
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
+        </div>
 
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">猪都笑哭了的博客</h1>
-        
-    </div>
+    </nav>
+
 </header>
 
-        <section class="main">
-            
+    
+<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
+
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color:rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+    
+
+    <div class="carousel-item red white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
                 
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/24/python网络编程/">
-                python网络编程
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-24</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="网络七层协议"><a href="#网络七层协议" class="headerlink" title="网络七层协议"></a>网络七层协议</h2><p>网络的七层协议由底层到顶层包括：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层</p>
-<h3 id="socket套接字"><a href="#socket套接字" class="headerlink" title="socket套接字"></a>socket套接字</h3><p>传输层是实现端到端的通信,因此，每一个传输层连接有两个端点。传输层连接的端点叫做套接字（socket）。端口号拼接到IP地址就构成了套接字。所谓套接字，实际上是一个通信端点，每个套接字都有一个套接字序号，包括主机的IP地址与一个16位的主机端口号，即形如（主机IP地址：端口号）。例如，如果IP地址是210.37.145.1，而端口号是23，那么得到套接字就是（210.37.145.1：23）</p>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#打印设备名称和IPV4地址</span></span><br><span class="line">import socket</span><br><span class="line">from binascii import hexlify</span><br><span class="line">def get_computer_info():</span><br><span class="line">    host_name=socket.gethostname()</span><br><span class="line">    <span class="built_in">print</span>(host_name)</span><br><span class="line">    ip_address=socket.gethostbyname(host_name)</span><br><span class="line">    <span class="built_in">print</span>(ip_address)</span><br><span class="line"><span class="comment">#打印远程设备的IP</span></span><br><span class="line">def get_remote_info():</span><br><span class="line">    remote_host=<span class="string">'www.baidu.com'</span></span><br><span class="line">    try:</span><br><span class="line">        ip_address=socket.gethostbyname(remote_host)</span><br><span class="line">    except socket.error as e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'%s:%s'</span>%(remote_host,ip_address))</span><br><span class="line"><span class="comment">#把IPV4地址转换成不同格式</span></span><br><span class="line"><span class="comment">#如果要使用低层网络函数，有时普通的字符串形式的IP地址并不是很有用，需要把它们转换成打包后的32位二进制格式。</span></span><br><span class="line">def convert_ipv4_address():</span><br><span class="line">    <span class="keyword">for</span> ip_address <span class="keyword">in</span> [<span class="string">'127.0.0.1'</span>,<span class="string">'192.168.1.1'</span>]:</span><br><span class="line">        <span class="comment">#inet_aton将地址转换为32位的网络序列IP地址</span></span><br><span class="line">        ip=socket.inet_aton(ip_address)</span><br><span class="line">        <span class="built_in">print</span>(ip)</span><br><span class="line">        <span class="comment">#将二进制IP变为十六进制</span></span><br><span class="line">        ip16=hexlify(ip)</span><br><span class="line">        <span class="built_in">print</span>(ip16)</span><br><span class="line">        <span class="comment">#inet_ntoa与inet_aton相反</span></span><br><span class="line">        f_ip=socket.inet_ntoa(ip)</span><br><span class="line">        <span class="built_in">print</span>(f_ip)</span><br><span class="line">def find_server_name():</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> [<span class="string">'http'</span>,<span class="string">'smtp'</span>]:</span><br><span class="line">        get_port=socket.getservbyname(name,<span class="string">'tcp'</span>)</span><br><span class="line">        <span class="built_in">print</span>(get_port)</span><br><span class="line">    <span class="built_in">print</span>(socket.getservbyname(<span class="string">'domain'</span>,<span class="string">'udp'</span>))</span><br><span class="line">    <span class="keyword">for</span> port <span class="keyword">in</span> [80,25]:</span><br><span class="line">        get_name=socket.getservbyport(port,<span class="string">'tcp'</span>)</span><br><span class="line">        <span class="built_in">print</span>(get_name)</span><br><span class="line">    <span class="built_in">print</span>(socket.getservbyport(53,<span class="string">'udp'</span>))</span><br><span class="line"><span class="comment">#Python的 socket 库提供了将数据在网络字节序和主机字节序之间相互转换的函数。ntohl()和htonl()</span></span><br><span class="line">def convert_integer():</span><br><span class="line">    data=1234</span><br><span class="line">    <span class="comment">#Long host byte order,stort host byte order</span></span><br><span class="line">    <span class="built_in">print</span>(socket.ntohl(data),socket.ntohs(data))</span><br><span class="line">    <span class="comment">#Long Network byte order,short Network byte order</span></span><br><span class="line">    <span class="built_in">print</span>(socket.htonl(data),socket.htons(data))</span><br><span class="line">def test_socket_timeout():</span><br><span class="line">    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)</span><br><span class="line">    <span class="built_in">print</span>(s.gettimeout())</span><br><span class="line">    s.settimeout(100)</span><br><span class="line">    <span class="built_in">print</span>(s.gettimeout())</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"打印设备名称和IPV4地址"</span>)</span><br><span class="line">    get_computer_info()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"打印远程设备的IP"</span>)</span><br><span class="line">    get_remote_info()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"把IPV4地址转换成不同格式"</span>)</span><br><span class="line">    convert_ipv4_address()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"通过指定的端口和协议找到服务名"</span>)</span><br><span class="line">    find_server_name()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"主机字节序和网络字节序之间相互转换"</span>)</span><br><span class="line">    convert_integer()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"设定并获取默认的套接字超时时间"</span>)</span><br><span class="line">    test_socket_timeout()</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果如下："><a href="#结果如下：" class="headerlink" title="结果如下："></a>结果如下：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">打印设备名称和IPV4地址</span><br><span class="line">LAPTOP-2QSFJCLP</span><br><span class="line">192.168.223.1</span><br><span class="line">打印远程设备的IP</span><br><span class="line">www.baidu.com:183.232.231.174</span><br><span class="line">把IPV4地址转换成不同格式</span><br><span class="line">b<span class="string">'\x7f\x00\x00\x01'</span></span><br><span class="line">b<span class="string">'7f000001'</span></span><br><span class="line">127.0.0.1</span><br><span class="line">b<span class="string">'\xc0\xa8\x01\x01'</span></span><br><span class="line">b<span class="string">'c0a80101'</span></span><br><span class="line">192.168.1.1</span><br><span class="line">通过指定的端口和协议找到服务名</span><br><span class="line">80</span><br><span class="line">25</span><br><span class="line">53</span><br><span class="line">http</span><br><span class="line">smtp</span><br><span class="line">domain</span><br><span class="line">主机字节序和网络字节序之间相互转换</span><br><span class="line">3523477504 53764</span><br><span class="line">3523477504 53764</span><br><span class="line">设定并获取默认的套接字超时时间</span><br><span class="line">None</span><br><span class="line">100.0</span><br></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
+                锲而不舍
                 
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/23/Python的多线程/">
-                Python的多线程
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-23</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程（Thread）也叫轻量级进程，是操作系统能够进行运算调度的最小单位，它被包涵在进程之中，是进程中的实际运作单位。线程自己不拥有系统资源，只拥有一点儿在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。一个线程可以创建和撤消另一个线程，同一进程中的多个线程之间可以并发执行。</p>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>假定有一 7 * 24 小时不停工的工厂，由于其电力有限，一次仅供一个车间使用，当一个车间在生产时，其他车间停工。在这里我们可以理解这个工厂相当于操作系统，供电设备相当于 CPU，一个车间相当于一个进程。</p>
-<p>一个车间里，可以有很多工人。他们协同完成一个任务。车间的空间是工人们共享的，这里一个工人就相当于一个线程，一个进程可以包括多个线程。比如许多房间是每个工人都可以进出的。这象征一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。</p>
-<h2 id="线程锁"><a href="#线程锁" class="headerlink" title="线程锁"></a>线程锁</h2><p>有时候资源有限，比如有些房间最多只能容纳一个人，当一个人占用的时候，其他人就不能进去，只能等待。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</p>
-<h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex ），防止多个线程同时读写某一块内存区域</p>
-<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>还有些房间，可以同时容纳 n 个人，比如厨房。也就是说，如果人数大于 n，多出来的人只能在外面等着。这好比某些内存区域，只能供给固定数目的线程使用。这时的解决方法，就是在门口挂 n 把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（ Semaphore ），用来保证多个线程不会互相冲突。</p>
-<h3 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h3><h4 id="互斥锁-1"><a href="#互斥锁-1" class="headerlink" title="互斥锁"></a>互斥锁</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#互斥锁</span></span><br><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">num=0</span><br><span class="line">lock=threading.Lock()</span><br><span class="line">def task_thread(n):</span><br><span class="line">    global num</span><br><span class="line">    lock.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000000):</span><br><span class="line">        num=num+n</span><br><span class="line">        num=num-n</span><br><span class="line">    lock.release()</span><br><span class="line"></span><br><span class="line">t1=threading.Thread(target=task_thread,args=(1,))</span><br><span class="line">t2=threading.Thread(target=task_thread,args=(2,))</span><br><span class="line">t3=threading.Thread(target=task_thread,args=(3,))</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br><span class="line"><span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure>
-
-<h4 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure>
-
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>如果不加上lock.acquire()和lock.release()那么结果就是一个不确定的值，因为一个线程没结束下一个线程开启，而此时这个线程取到的结果是中间结果。有了互斥锁就能保证在for循环执行之后再执行开启下一个线程</p>
-<h4 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h4><p>模拟银行办理业务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">semaphore=threading.BoundedSemaphore(5)</span><br><span class="line">def yewubanli(name):</span><br><span class="line">    semaphore.acquire()</span><br><span class="line">    time.sleep(3)</span><br><span class="line">    <span class="built_in">print</span>(f<span class="string">'&#123;time.strftime("%y-%m-%d %H-%M-%S")&#125;,&#123;name&#125;正在办理业务'</span>)</span><br><span class="line">    semaphore.release()</span><br><span class="line"></span><br><span class="line">list=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(12):</span><br><span class="line">    t=Thread(target=yewubanli,args=(i,))</span><br><span class="line">    list.append(t)</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> list:</span><br><span class="line">    a.start()</span><br><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> list:</span><br><span class="line">    b.join()</span><br></pre></td></tr></table></figure>
-
-<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><p>只允许三个线程线程开启，等有一个线程执行完下一个线程才能开始执行，就好比一个房间只能容纳三个，要等其中一个人出来，下一个人才能进去</p>
-<h2 id="多线程在类的使用方法"><a href="#多线程在类的使用方法" class="headerlink" title="多线程在类的使用方法"></a>多线程在类的使用方法</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>通过继承Therad，重写run方法来实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">class MyThread(Thread):</span><br><span class="line">	def __init__(self,n):</span><br><span class="line">		super().__init__()</span><br><span class="line">	</span><br><span class="line">    def run(self):</span><br><span class="line">	   <span class="comment">#这里是你要实现的的功能的代码</span></span><br><span class="line">	   pass</span><br><span class="line">	   </span><br><span class="line">t1=MyThread(n)</span><br><span class="line">t2=MyThread(n)</span><br><span class="line">t3=MyThread(n)</span><br><span class="line">t1.start()</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br></pre></td></tr></table></figure>
-
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>这是另一种重写方法，比较灵活</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">class MyThread(Thread):</span><br><span class="line">	def __init__(self,target,args):</span><br><span class="line">		super().__init__()</span><br><span class="line">		self.target=target</span><br><span class="line">		self.args=args</span><br><span class="line">	</span><br><span class="line">	def run(self):</span><br><span class="line">		self.target(*args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task_thread(n):</span><br><span class="line">	<span class="comment">#这里是你要实现的的功能的代码</span></span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line">t1=MyThread(target=target,args=(1,))	</span><br><span class="line">t2=MyThread(target=target,args=(2,))	</span><br><span class="line">t3=MyThread(target=target,args=(3,))	</span><br><span class="line">t1.start()</span><br><span class="line">t1.start()</span><br><span class="line">t2.start()</span><br><span class="line">t3.start()</span><br><span class="line"></span><br><span class="line">t1.join()</span><br><span class="line">t2.join()</span><br><span class="line">t3.join()</span><br></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/22/python的鸭子类型和单例模式/">
-                python的鸭子类型和单例模式
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-22</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>当看到一只鸟走起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子</p>
-<h2 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h2><p>在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如，在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为鸭的对象，并调用它的走和叫方法。</p>
-<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line">	def walk(self):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"this man walk like a duck"</span>)</span><br><span class="line">	</span><br><span class="line">	def swim(self):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"this man swim like a duck"</span>)</span><br><span class="line"></span><br><span class="line">def duck(animal):</span><br><span class="line">	animal.walk()</span><br><span class="line">	animal.swim()</span><br><span class="line">p=Person()</span><br><span class="line">duck(p)</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this man walk like a duck</span><br><span class="line">this man swim like a duck</span><br></pre></td></tr></table></figure>
-
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>是一种常用的软件设计模式，该模式的主要目的是确保某一个类只有一个实例存在。当你希望在整个系统中，某个类只能出现一个实例时，单例对象就能派上用场。</p>
-<p>比如，某个服务器程序的配置信息存放在一个文件中，客户端通过一个 AppConfig 的类来读取配置文件的信息。如果在程序运行期间，有很多地方都需要使用配置文件的内容，也就是说，很多地方都需要创建 AppConfig 对象的实例，这就导致系统中存在多个 AppConfig 的实例对象，而这样会严重浪费内存资源，尤其是在配置文件内容很多的情况下。事实上，类似 AppConfig 这样的类，我们希望在程序运行期间只存在一个实例对象。</p>
-<p>在Python中，我们可以用多种方法来实现单例模式</p>
-<h3 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a>使用模块</h3><p>其实，Python 的模块就是天然的单例模式，因为模块在第一次导入时，会生成 .pyc 文件，当第二次导入时，就会直接加载 .pyc 文件，而不会再次执行模块代码。因此，我们只需把相关的函数和数据定义在一个模块中，就可以获得一个单例对象了。如果我们真的想要一个单例类，可以考虑这样做：<br>mysingleton.py</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Singleton:</span><br><span class="line">	def foo(self):</span><br><span class="line">		pass</span><br><span class="line">singleton=Singleton()</span><br></pre></td></tr></table></figure>
-
-<p>将上面的代码保存在文件 mysingleton.py 中，要使用时，直接在其他文件中导入此文件中的对象，这个对象即是单例模式的对象</p>
-<h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a>使用装饰器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def Singleton(cls):</span><br><span class="line">    _instance = &#123;&#125;</span><br><span class="line">    def _singleton(*args, **kargs):</span><br><span class="line">        <span class="keyword">if</span> cls not <span class="keyword">in</span> _instance:</span><br><span class="line">            _instance[cls] = cls(*args, **kargs)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> _instance[cls]</span><br><span class="line">    <span class="built_in">return</span> _singleton</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Singleton</span><br><span class="line">class A:</span><br><span class="line">    def __init__(self, age):</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">a1 = A(10)</span><br><span class="line">a2 = A(20)</span><br><span class="line"><span class="built_in">print</span>(a1.age)</span><br><span class="line"><span class="built_in">print</span>(a2.age)</span><br></pre></td></tr></table></figure>
-
-<h4 id="输出结果为：-1"><a href="#输出结果为：-1" class="headerlink" title="输出结果为："></a>输出结果为：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/22/面向对象思想/">
-                面向对象思想
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-22</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="面向过程和面向对象的区别"><a href="#面向过程和面向对象的区别" class="headerlink" title="面向过程和面向对象的区别"></a>面向过程和面向对象的区别</h2><h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><p>1.把完的成某一个需求的 所有步骤 从头到尾 逐步实现<br>2.根据开发要求，将某些功能独立的代码封装成一个又一个函数<br>3.最后完成的代码，就是顺序的调用不同的函数 </p>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>1.注重步骤与过程，不注重职责分工<br>2.如果需求复杂，代码会变得很复杂<br>3.开发复杂项目，没有固定的套路，开发难度很大 </p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>1.在完成某一个需求前，首先确定职责–要做的事(方法)<br>2.根据职责确定不同的对象，在对象内部封装不同的方法(多个)<br>3.最后完成代码，就是顺序的让不同的对象调用不同的方法 </p>
-<h4 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h4><p>1.注重对象和职责，不同的对象承担不同的职责<br>2.更加适合对复杂的需求变化，是专门应对复杂项目的开发，提供的固定套路<br>3.需要在面向过程的基础上，再学习一些面向对象的语法</p>
-<h3 id="面向对象的两个核心概念"><a href="#面向对象的两个核心概念" class="headerlink" title="面向对象的两个核心概念"></a>面向对象的两个核心概念</h3><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><h4 id="类的概念"><a href="#类的概念" class="headerlink" title="类的概念"></a>类的概念</h4><p>类：是对一群具有相同特征或行为的事物的一个统称，是抽象的，不能直接使用(就好比，飞机图纸不能直接飞上天)<br>特征:被称为属性<br>行为:被称为方法<br>类 就相当于制造飞机时的图纸，是一个模板，是负责创建对象的</p>
-<h4 id="类的创建"><a href="#类的创建" class="headerlink" title="类的创建"></a>类的创建</h4><p>类名：满足这类事物的名字(大驼峰命名法)<br>大驼峰命名法：<br>1.每个单词的首字母大写<br>2.单词与单词之间没有下划线<br>2.属性:这个类创建出来的对象有什么样的特征<br>3.方法：这个类创建出来的对象有什么样的行为<br>类名的确定：<br>名词提炼法:分析整个业务流程，出现的名词，通常就是找到的类名<br>定义一个只包含方法的类<br>class 类名：<br>def 方法1(self,参数列表):<br>      pass<br>def 方法2(self,参数列表):<br>      pass<br>方法的定义格式和函数的几乎一样<br>区别在于第一个参数必须是self</p>
-<h4 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h4><p>对象：是由类创建出来的一个具体的存在，可以直接使用(图纸创造出来的飞机，可以飞上天) 由哪一个类创建出来的对象，就拥有哪一个类的定义的属性和方法<br>“对象就相当于用图纸创造出来的飞机” 在程序开发中，应该先有类，再有对象 </p>
-<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>当一个类定义完成之后，要使用这个类来创建对象<br>对象变量 = 类名()</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/21/python基础篇/">
-                python基础篇
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-21</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="一些函数的使用方法"><a href="#一些函数的使用方法" class="headerlink" title="一些函数的使用方法"></a>一些函数的使用方法</h2><h4 id="定义一个字符串：str-”abcdecfh”"><a href="#定义一个字符串：str-”abcdecfh”" class="headerlink" title="定义一个字符串：str=”abcdecfh”"></a>定义一个字符串：str=”abcdecfh”</h4><h3 id="一、字符串的判断"><a href="#一、字符串的判断" class="headerlink" title="一、字符串的判断"></a>一、字符串的判断</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">str.upper()  <span class="comment">#字符串大写</span></span><br><span class="line">lower() <span class="comment">#字符串小写</span></span><br><span class="line">capitalize（）<span class="comment">#首字母大写</span></span><br><span class="line">title（） <span class="comment"># 所有单词首字母大写</span></span><br><span class="line">isdecimal() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isdigit()<span class="comment">#判断是不是数字类型</span></span><br><span class="line">isnumeric() <span class="comment">#判断是不是数字类型</span></span><br><span class="line">isalpha() <span class="comment">#判断是不是纯字母</span></span><br><span class="line">isalnum() <span class="comment">#判断是不是字母加数字，但是字符串中不能有空格</span></span><br><span class="line">isspace() <span class="comment">#判断是不是空白符</span></span><br><span class="line">isidentifier() <span class="comment">#判断首字母的规范</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="二、字符串的扩充"><a href="#二、字符串的扩充" class="headerlink" title="二、字符串的扩充"></a>二、字符串的扩充</h2><h5 id="两边扩充"><a href="#两边扩充" class="headerlink" title="两边扩充"></a>两边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.center(7,<span class="string">"="</span>) <span class="comment">#两边扩充“=”</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="单边扩充"><a href="#单边扩充" class="headerlink" title="单边扩充"></a>单边扩充</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单边扩充ljust:左对齐右扩充  rjust:右对齐左扩充</span></span><br><span class="line">str.ljust (8,<span class="string">"-"</span>) </span><br><span class="line">str.rjust(8,<span class="string">"-"</span>)</span><br><span class="line">str.zfill(6)    </span><br><span class="line"><span class="string">"+100"</span>.zfill(4) <span class="comment">#结果：+0100（“-”的同理）</span></span><br><span class="line">str.zfill(6).count(<span class="string">"ab"</span>)<span class="comment">#统计某一个值出现的次数</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2)<span class="comment">#参数2代表从第几个开始找</span></span><br><span class="line">str.zfill(6).count(<span class="string">"a"</span>,2,6) <span class="comment">#6代表到哪里结束</span></span><br><span class="line">str.endswith(<span class="string">"fgh"</span>,<span class="string">"z"</span>,<span class="string">"a"</span>)、str.startswith(<span class="string">"abc"</span>) <span class="comment">#用什么开头用什么结尾,一个满足为Ture</span></span><br><span class="line">str.find(<span class="string">"abc"</span>,1) 、rfind()<span class="comment">#从左找</span></span><br></pre></td></tr></table></figure>
-
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/09/21/python之路——路漫漫兮其修远兮/">
-                python之路——路漫漫兮其修远兮
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-09-21</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="成功需要自我管理"><a href="#成功需要自我管理" class="headerlink" title="成功需要自我管理"></a>成功需要自我管理</h2><p>当你拼命想完成一件事的时候，你就不再是别人的对手，或者说得更确切一些，别人就不再是你的对手了，不管是谁，只要下了这个决心，他就会立刻觉得增添了无穷的力量，而他的视野也随之开阔了。</p>
-
-        </div>
-    
-
-</div>
-            
-        </section>
-    </div>
-</div>
-
-
-
-
-
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>About</h2>
-                <p>
-                    
-                </p>
             </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>Recent Posts</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2019/09/24/python网络编程/">python网络编程</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/09/23/Python的多线程/">Python的多线程</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/09/22/python的鸭子类型和单例模式/">python的鸭子类型和单例模式</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/09/22/面向对象思想/">面向对象思想</a>
-            </li>
-            
-        </ul>
-    </div>
 
-
-
-            
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="\#">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['学习这件事，不在于有没有人教你，最重要的是你有没有恒心','Never give up'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    人生就像心电图，一帆风顺你是挂了
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+
+
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>开始阅读
+                </a>
+
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/liang-zero" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:513077914@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=513077914" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 513077914" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+        </div>
+    </div>
+
+    
+        
+
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/medias/featureimages/17.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">python之路——路漫漫兮其修远兮</div>
+                            <div class="description center-align">
+                                
+                                    成功需要自我管理当你拼命想完成一件事的时候，你就不再是别人的对手，或者说得更确切一些，别人就不再是你的对手了，不管是谁，只要下了这个决心，他就会立刻觉得增添了无穷的力量，而他的视野也随之开阔了。
+
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2019/09/21/python之路——路漫漫兮其修远兮/" class="waves-effect waves-light btn" target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
+</div>
+
+<script>
+    // TODO 此处的轮播尚需优化，PC/Mobile 在触摸切换时都感觉相当不灵活
+    $(function () {
+        let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'false' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+
+        let carouselIntervalId;
+        
+
+        function restartPlay() {
+            
+        };
+
+        
+    });
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <div class="dream">
+    
+    <div class="title center-align">
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+        </div>
+    </div>
+</div>
+                    
+
+                    
+
+                    
+
+                    
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/17.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/日志/" class="category">日志</a>
+                        
+                    
+                </div>
+                <a href="/2019/09/21/python之路——路漫漫兮其修远兮/">
+                    <h3 class="post-title">python之路——路漫漫兮其修远兮</h3>
+                </a>
+                <p class="post-description">成功需要自我管理当你拼命想完成一件事的时候，你就不再是别人的对手，或者说得更确切一些，别人就不再是你的对手了，不管是谁，只要下了这个决心，他就会立刻觉得增添了无穷的力量，</p>
+                <a href="/2019/09/21/python之路——路漫漫兮其修远兮/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+    
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/12/11/matplotlib的用法/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="matplotlib的用法">
+                            
+                            <span class="card-title">matplotlib的用法</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                基本用法from matplotlib import pyplot as plt
+# 设置图像的大小，dpi是设置图像的清晰度
+plt.figure(figsize=(20, 8), dpi=80)
+# 设置图像标题
+plt.title()
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据分析/" class="post-category">
+                                    数据分析
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/matplotlib/">
+                            <span class="chip bg-color">matplotlib</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/24/python网络编程/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python网络编程">
+                            
+                            <span class="card-title">python网络编程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                网络七层协议网络的七层协议由底层到顶层包括：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层
+socket套接字传输层是实现端到端的通信,因此，每一个传输层连接有两个端点。传输层连接的端点叫做套接字（socket）。端口号拼接到I
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python网络编程/" class="post-category">
+                                    python网络编程
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/网络编程/">
+                            <span class="chip bg-color">网络编程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/23/Python的多线程/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python的多线程">
+                            
+                            <span class="card-title">Python的多线程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                线程线程（Thread）也叫轻量级进程，是操作系统能够进行运算调度的最小单位，它被包涵在进程之中，是进程中的实际运作单位。线程自己不拥有系统资源，只拥有一点儿在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。一
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python基础/" class="post-category">
+                                    python基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/多线程/">
+                            <span class="chip bg-color">多线程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/22/python的鸭子类型和单例模式/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="python的鸭子类型和单例模式">
+                            
+                            <span class="card-title">python的鸭子类型和单例模式</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                当看到一只鸟走起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子
+鸭子类型在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如，在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为鸭的对象，并调用它的走和叫方法。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python基础/" class="post-category">
+                                    python基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/单例模式/">
+                            <span class="chip bg-color">单例模式</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/22/面向对象思想/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="面向对象思想">
+                            
+                            <span class="card-title">面向对象思想</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                面向过程和面向对象的区别面向过程1.把完的成某一个需求的 所有步骤 从头到尾 逐步实现2.根据开发要求，将某些功能独立的代码封装成一个又一个函数3.最后完成的代码，就是顺序的调用不同的函数 
+特点：1.注重步骤与过程，不注重职责分工2.如果
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python基础/" class="post-category">
+                                    python基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/基础/">
+                            <span class="chip bg-color">基础</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/python基础篇/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python基础篇">
+                            
+                            <span class="card-title">python基础篇</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                一些函数的使用方法定义一个字符串：str=”abcdecfh”一、字符串的判断str.upper()  #字符串大写
+lower() #字符串小写
+capitalize（）#首字母大写
+title（） # 所有单词首字母大写
+isdecim
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python基础/" class="post-category">
+                                    python基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/基础/">
+                            <span class="chip bg-color">基础</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/09/21/python之路——路漫漫兮其修远兮/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python之路——路漫漫兮其修远兮">
+                            
+                            <span class="card-title">python之路——路漫漫兮其修远兮</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                成功需要自我管理当你拼命想完成一件事的时候，你就不再是别人的对手，或者说得更确切一些，别人就不再是你的对手了，不管是谁，只要下了这个决心，他就会立刻觉得增添了无穷的力量，而他的视野也随之开阔了。
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/日志/" class="post-category">
+                                    日志
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/座右铭/">
+                            <span class="chip bg-color">座右铭</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://yoursite.com" target="_blank">Noback</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liang-zero" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:513077914@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=513077914" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 513077914" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
 </footer>
 
-<!-- After footer scripts -->
-
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js"></script>
-
-<!-- Disqus Comments -->
+<div class="progress-bar"></div>
 
 
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
 </body>
 
