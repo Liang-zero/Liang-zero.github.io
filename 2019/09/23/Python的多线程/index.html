@@ -415,106 +415,106 @@
 <h2 id="线程锁"><a href="#线程锁" class="headerlink" title="线程锁"></a>线程锁</h2><p>有时候资源有限，比如有些房间最多只能容纳一个人，当一个人占用的时候，其他人就不能进去，只能等待。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</p>
 <h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex ），防止多个线程同时读写某一块内存区域</p>
 <h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>还有些房间，可以同时容纳 n 个人，比如厨房。也就是说，如果人数大于 n，多出来的人只能在外面等着。这好比某些内存区域，只能供给固定数目的线程使用。这时的解决方法，就是在门口挂 n 把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（ Semaphore ），用来保证多个线程不会互相冲突。</p>
-<h3 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h3><h4 id="互斥锁-1"><a href="#互斥锁-1" class="headerlink" title="互斥锁"></a>互斥锁</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#互斥锁</span>
-<span class="token function">import</span> threading
-from threading <span class="token function">import</span> Thread
+<h3 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h3><h4 id="互斥锁-1"><a href="#互斥锁-1" class="headerlink" title="互斥锁"></a>互斥锁</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#互斥锁</span>
+<span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
 
-num<span class="token operator">=</span>0
-lock<span class="token operator">=</span>threading.Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>
-def task_thread<span class="token punctuation">(</span>n<span class="token punctuation">)</span>:
-    global num
-    lock.acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1000000<span class="token punctuation">)</span>:
-        num<span class="token operator">=</span>num+n
-        num<span class="token operator">=</span>num-n
-    lock.release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+num<span class="token operator">=</span><span class="token number">0</span>
+lock<span class="token operator">=</span>threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">task_thread</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> num
+    lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        num<span class="token operator">=</span>num<span class="token operator">+</span>n
+        num<span class="token operator">=</span>num<span class="token operator">-</span>n
+    lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-t1<span class="token operator">=</span>threading.Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread,args<span class="token operator">=</span><span class="token punctuation">(</span>1,<span class="token punctuation">))</span>
-t2<span class="token operator">=</span>threading.Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread,args<span class="token operator">=</span><span class="token punctuation">(</span>2,<span class="token punctuation">))</span>
-t3<span class="token operator">=</span>threading.Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread,args<span class="token operator">=</span><span class="token punctuation">(</span>3,<span class="token punctuation">))</span>
-t1.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t1<span class="token operator">=</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+t2<span class="token operator">=</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+t3<span class="token operator">=</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task_thread<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-t1.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
+t1<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
 <h4 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h4><pre class=" language-bash"><code class="language-bash">0</code></pre>
 <h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>如果不加上lock.acquire()和lock.release()那么结果就是一个不确定的值，因为一个线程没结束下一个线程开启，而此时这个线程取到的结果是中间结果。有了互斥锁就能保证在for循环执行之后再执行开启下一个线程</p>
 <h4 id="信号量-1"><a href="#信号量-1" class="headerlink" title="信号量"></a>信号量</h4><p>模拟银行办理业务</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> threading
-from threading <span class="token function">import</span> Thread
-<span class="token function">import</span> <span class="token function">time</span>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+<span class="token keyword">import</span> time
 
-semaphore<span class="token operator">=</span>threading.BoundedSemaphore<span class="token punctuation">(</span>5<span class="token punctuation">)</span>
-def yewubanli<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:
-    semaphore.acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    time.sleep<span class="token punctuation">(</span>3<span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span>f<span class="token string">'{time.strftime("%y-%m-%d %H-%M-%S")},{name}正在办理业务'</span><span class="token punctuation">)</span>
-    semaphore.release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+semaphore<span class="token operator">=</span>threading<span class="token punctuation">.</span>BoundedSemaphore<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">yewubanli</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    semaphore<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{time.strftime("%y-%m-%d %H-%M-%S")},{name}正在办理业务'</span><span class="token punctuation">)</span>
+    semaphore<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>12<span class="token punctuation">)</span>:
-    t<span class="token operator">=</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>yewubanli,args<span class="token operator">=</span><span class="token punctuation">(</span>i,<span class="token punctuation">))</span>
-    list.append<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
-<span class="token keyword">for</span> a <span class="token keyword">in</span> list:
-    a.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> b <span class="token keyword">in</span> list:
-    b.join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t<span class="token operator">=</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>yewubanli<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+<span class="token keyword">for</span> a <span class="token keyword">in</span> list<span class="token punctuation">:</span>
+    a<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> b <span class="token keyword">in</span> list<span class="token punctuation">:</span>
+    b<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><p>只允许三个线程线程开启，等有一个线程执行完下一个线程才能开始执行，就好比一个房间只能容纳三个，要等其中一个人出来，下一个人才能进去</p>
 <h2 id="多线程在类的使用方法"><a href="#多线程在类的使用方法" class="headerlink" title="多线程在类的使用方法"></a>多线程在类的使用方法</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>通过继承Therad，重写run方法来实现</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> threading
-from threading <span class="token function">import</span> Thread
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
 
-class MyThread<span class="token punctuation">(</span>Thread<span class="token punctuation">)</span>:
-    def __init__<span class="token punctuation">(</span>self,n<span class="token punctuation">)</span>:
-        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    def run<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
        <span class="token comment" spellcheck="true">#这里是你要实现的的功能的代码</span>
-       pass
+       <span class="token keyword">pass</span>
 
 t1<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 t2<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 t3<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-t1.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t1.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-t1.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+t1<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>这是另一种重写方法，比较灵活</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> threading
-from threading <span class="token function">import</span> Thread
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
 
-class MyThread<span class="token punctuation">(</span>Thread<span class="token punctuation">)</span>:
-    def __init__<span class="token punctuation">(</span>self,target,args<span class="token punctuation">)</span>:
-        super<span class="token punctuation">(</span><span class="token punctuation">)</span>.__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        self.target<span class="token operator">=</span>target
-        self.args<span class="token operator">=</span>args
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>target<span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>target<span class="token operator">=</span>target
+        self<span class="token punctuation">.</span>args<span class="token operator">=</span>args
 
-    def run<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:
-        self.target<span class="token punctuation">(</span>*args<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>target<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span>
 
 
-def task_thread<span class="token punctuation">(</span>n<span class="token punctuation">)</span>:
+<span class="token keyword">def</span> <span class="token function">task_thread</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true">#这里是你要实现的的功能的代码</span>
-    pass
+    <span class="token keyword">pass</span>
 
-t1<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target,args<span class="token operator">=</span><span class="token punctuation">(</span>1,<span class="token punctuation">))</span>    
-t2<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target,args<span class="token operator">=</span><span class="token punctuation">(</span>2,<span class="token punctuation">))</span>    
-t3<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target,args<span class="token operator">=</span><span class="token punctuation">(</span>3,<span class="token punctuation">))</span>    
-t1.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t1.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t1<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+t2<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+t3<span class="token operator">=</span>MyThread<span class="token punctuation">(</span>target<span class="token operator">=</span>target<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-t1.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t2.join<span class="token punctuation">(</span><span class="token punctuation">)</span>
-t3.join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+t1<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t2<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t3<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
