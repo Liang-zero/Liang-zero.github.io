@@ -494,7 +494,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
 
 <span class="token keyword">create</span> <span class="token keyword">index</span> Five_student_dcb74a5b
     <span class="token keyword">on</span> Five_student <span class="token punctuation">(</span>s_grade_id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加学生"><a href="#添加学生" class="headerlink" title="添加学生"></a>添加学生</h5><p><img src="/.com//C:%5CUsers%5C51307%5CDesktop%5Cmyblog%5Csource_posts%5Cimages%5Cdjango%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A.png" alt="django模板一对多"></p>
+<h5 id="添加学生"><a href="#添加学生" class="headerlink" title="添加学生"></a>添加学生</h5><p><img src="https://github.com/Liang-zero/images/blob/master/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/1.png?raw=true" alt="学生表">)</p>
 <h3 id="Five-grade表"><a href="#Five-grade表" class="headerlink" title="Five_grade表"></a>Five_grade表</h3><h4 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- auto-generated definition</span>
 <span class="token keyword">create</span> <span class="token keyword">table</span> Five_grade
 <span class="token punctuation">(</span>
@@ -502,11 +502,11 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
         <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
     g_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加班级"><a href="#添加班级" class="headerlink" title="添加班级"></a>添加班级</h5><p><img src="/.com//C:%5CUsers%5C51307%5CDesktop%5Cmyblog%5Csource_posts%5Cimages%5Cdjango%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A(1).png" alt="django模板一对多(1)"></p>
+<h5 id="添加班级"><a href="#添加班级" class="headerlink" title="添加班级"></a>添加班级</h5><p><img src="https://github.com/Liang-zero/images/blob/master/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/2.png?raw=true" alt="班级表"></p>
 <h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>访问<strong>localhost:8000/five/showgrade</strong></p>
-<p><img src="/.com//C:%5CUsers%5C51307%5CDesktop%5Cmyblog%5Csource_posts%5Cimages%5Cdjango%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A(2).png" alt="django模板一对多(1)"></p>
+<p><img src="https://github.com/Liang-zero/images/blob/master/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/3.png?raw=true" alt></p>
 <p>点击班级(python，java，c++)查看对应学生</p>
-<p><img src="/.com//C:%5CUsers%5C51307%5CDesktop%5Cmyblog%5Csource_posts%5Cimages%5Cdjango%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A(3).png" alt="django模板一对多(1)"></p>
+<p><img src="https://github.com/Liang-zero/images/blob/master/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/4.png?raw=true" alt></p>
 
             </div>
             <hr/>
@@ -798,30 +798,31 @@ clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/19/images/django模板一对多/">
+                <a href="/2020/02/15/django模板OnetoOne/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="django模板一对多">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="django模板OnetoOne">
                         
-                        <span class="card-title">django模板一对多</span>
+                        <span class="card-title">django模板OnetoOne</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            django模板一对多以一个班级有多个学生为例子, 实现点击班级查看对应学生
-djngo代码部分models.pyfrom django.db import models
+                            Django模板OnetoOne以人绑定身份证为例子，以下是代码
+models.py代码import django
+from django.db import models
 
 # Create your models here.
 
 
-clas
+#主表
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
                             </span>
                         <span class="publish-author">
                             
