@@ -5,11 +5,11 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="django模板, Noback">
-    <meta name="description" content="django模板templates模板语言，也就是django中的htmlblock写一个base.html
+    <meta name="description" content="django模板templates模板语言block写一个base.html
 &amp;lt;!DOCTYPE html&gt;
 &amp;lt;html&gt;
 &amp;lt;head&gt;
-   &amp;lt;title&gt;{% block titl">
+   &amp;lt;title&gt;{% block title %}默认标题{% endbl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -398,7 +398,17 @@
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    428
+                </div>
+                
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
                 
 
                 
@@ -413,7 +423,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="django模板"><a href="#django模板" class="headerlink" title="django模板"></a>django模板</h1><h2 id="templates模板语言，也就是django中的html"><a href="#templates模板语言，也就是django中的html" class="headerlink" title="templates模板语言，也就是django中的html"></a>templates模板语言，也就是django中的html</h2><h3 id="block"><a href="#block" class="headerlink" title="block"></a>block</h3><p>写一个base.html</p>
+                <h1 id="django模板"><a href="#django模板" class="headerlink" title="django模板"></a>django模板</h1><h2 id="templates模板语言"><a href="#templates模板语言" class="headerlink" title="templates模板语言"></a>templates模板语言</h2><h3 id="block"><a href="#block" class="headerlink" title="block"></a>block</h3><p>写一个base.html</p>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -446,7 +456,39 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
 <p>注意：</p>
-<pre class=" language-bash"><code class="language-bash">extends继承，如果写了<span class="token punctuation">{</span>% block title %<span class="token punctuation">}</span>那么默认的就会本顶掉，<span class="token punctuation">{</span>% block content %<span class="token punctuation">}</span>也一样</code></pre>
+<pre class=" language-python"><code class="language-python">extends继承，如果写了<span class="token punctuation">{</span><span class="token operator">%</span> block title <span class="token operator">%</span><span class="token punctuation">}</span>那么默认的就会本顶掉，<span class="token punctuation">{</span><span class="token operator">%</span> block content <span class="token operator">%</span><span class="token punctuation">}</span>也一样</code></pre>
+<h3 id="for循环和List内容显示"><a href="#for循环和List内容显示" class="headerlink" title="for循环和List内容显示"></a>for循环和List内容显示</h3><h4 id="views-py"><a href="#views-py" class="headerlink" title="views.py"></a>views.py</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">home</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   TutorialList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"HTML"</span><span class="token punctuation">,</span> <span class="token string">"CSS"</span><span class="token punctuation">,</span> <span class="token string">"jQuery"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"Django"</span><span class="token punctuation">]</span>
+   <span class="token comment" spellcheck="true"># 或者可以改成context=locals()</span>
+   <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'home.html'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'TutorialList'</span><span class="token punctuation">:</span> TutorialList<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h4 id="home-html"><a href="#home-html" class="headerlink" title="home.html"></a>home.html</h4><p>创建一个home.html</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>欢迎光临<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+{% for i in TutorialList %}
+{{ i }}
+{% endfor %}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="for和if"><a href="#for和if" class="headerlink" title="for和if"></a>for和if</h4><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token operator">%</span> <span class="token keyword">for</span> item <span class="token keyword">in</span> List <span class="token operator">%</span><span class="token punctuation">}</span>
+   <span class="token punctuation">{</span><span class="token punctuation">{</span> item <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token operator">not</span> forloop<span class="token punctuation">.</span>last <span class="token operator">%</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token operator">%</span> endif <span class="token operator">%</span><span class="token punctuation">}</span> 
+<span class="token punctuation">{</span><span class="token operator">%</span> endfor <span class="token operator">%</span><span class="token punctuation">}</span></code></pre>
+<p>forloop表：</p>
+<p><img src="https://gitee.com/silent-666/images/raw/b73aa96bbe7ccfdb756f6fa8a38b79288227519f/django%E6%A8%A1%E6%9D%BF/1.jpg" alt="forloop表"></p>
+<pre class=" language-python"><code class="language-python">注意：<span class="token keyword">for</span> 循环要有一个结束标记<span class="token punctuation">{</span><span class="token operator">%</span> endfor <span class="token operator">%</span><span class="token punctuation">}</span>，<span class="token keyword">for</span>可以和<span class="token keyword">if</span>一起用，同样<span class="token keyword">if</span>也要加结束标记<span class="token punctuation">{</span><span class="token operator">%</span> endif <span class="token operator">%</span><span class="token punctuation">}</span></code></pre>
+<h4 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h4><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token operator">%</span> <span class="token keyword">for</span> athlete <span class="token keyword">in</span> List <span class="token operator">%</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> athlete <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+<span class="token punctuation">{</span><span class="token operator">%</span> empty <span class="token operator">%</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">></span>抱歉，列表为空<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+<span class="token punctuation">{</span><span class="token operator">%</span> endfor <span class="token operator">%</span><span class="token punctuation">}</span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre class=" language-python"><code class="language-python">一般的变量之类的用 <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>（变量），功能类的，比如循环，条件判断是用 <span class="token punctuation">{</span><span class="token operator">%</span>  <span class="token operator">%</span><span class="token punctuation">}</span>（标签）</code></pre>
+<h3 id="获取当前用户"><a href="#获取当前用户" class="headerlink" title="获取当前用户"></a>获取当前用户</h3><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token punctuation">{</span> request<span class="token punctuation">.</span>user <span class="token punctuation">}</span><span class="token punctuation">}</span>
+如果登录显示内容，不登录不显示内容</code></pre>
+<h3 id="获取当前网网址"><a href="#获取当前网网址" class="headerlink" title="获取当前网网址"></a>获取当前网网址</h3><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token punctuation">{</span> request<span class="token punctuation">.</span>path <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
+<h3 id="获取当前GET参数"><a href="#获取当前GET参数" class="headerlink" title="获取当前GET参数"></a>获取当前GET参数</h3><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token punctuation">{</span> request<span class="token punctuation">.</span>GET<span class="token punctuation">.</span>urlencode <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -462,7 +504,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="liangzero.com" rel="external nofollow noreferrer">Noback</a>
+                    <a href="http://yoursite.com" rel="external nofollow noreferrer">Noback</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -472,7 +514,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="liangzero.com/2020/02/26/django模板/">liangzero.com/2020/02/26/django模板/</a>
+                    <a href="http://yoursite.com/2020/02/26/django模板/">http://yoursite.com/2020/02/26/django模板/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,7 +527,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="liangzero.com" target="_blank">Noback</a>
+                    <a href="http://yoursite.com" target="_blank">Noback</a>
                     !
                 </span>
             </div>
@@ -957,11 +999,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            django模板templates模板语言，也就是django中的htmlblock写一个base.html
+                            django模板templates模板语言block写一个base.html
 &lt;!DOCTYPE html>
 &lt;html>
 &lt;head>
-   &lt;title>{% block titl
+   &lt;title>{% block title %}默认标题{% endbl
                         
                     </div>
                     <div class="publish-info">
@@ -1182,10 +1224,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="liangzero.com" target="_blank">Noback</a>
+            <a href="http://yoursite.com" target="_blank">Noback</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">6.8k</span>&nbsp;字
             
             
             
