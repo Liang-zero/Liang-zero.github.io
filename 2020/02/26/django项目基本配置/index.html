@@ -4,14 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="django模板一对多, Noback">
-    <meta name="description" content="django模板一对多以一个班级有多个学生为例子, 实现点击班级查看对应学生
-djngo代码部分models.pyfrom django.db import models
-
-# Create your models here.
-
-
-clas">
+    <meta name="keywords" content="django项目基本配置, Noback">
+    <meta name="description" content="django项目基本配置新建项目这里取名为HelloDjango
+python django-admin.py startproject HelloDjango
+目录结构HelloDjango├── manage.py└── HelloDj">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +15,7 @@ clas">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>django模板一对多 | Noback</title>
+    <title>django项目基本配置 | Noback</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +242,12 @@ clas">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">django模板一对多</h1>
+                    <h1 class="description center-align post-title">django项目基本配置</h1>
                 </div>
             </div>
         </div>
@@ -393,7 +389,7 @@ clas">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-02-26
                 </div>
                 
 
@@ -415,98 +411,89 @@ clas">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="django模板一对多"><a href="#django模板一对多" class="headerlink" title="django模板一对多"></a>django模板一对多</h1><p>以一个班级有多个学生为例子, 实现点击班级查看对应学生</p>
-<h3 id="djngo代码部分"><a href="#djngo代码部分" class="headerlink" title="djngo代码部分"></a>djngo代码部分</h3><h3 id="models-py"><a href="#models-py" class="headerlink" title="models.py"></a>models.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
-
-<span class="token comment" spellcheck="true"># Create your models here.</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Grade</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    g_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    s_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># 设置student外键</span>
-    s_grade <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Grade<span class="token punctuation">)</span></code></pre>
-<h3 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url
-
-<span class="token keyword">from</span> Five <span class="token keyword">import</span> views
-
-urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
-    url<span class="token punctuation">(</span>r<span class="token string">'^showstudent/(\d+)'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>show_student<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'show_student'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    url<span class="token punctuation">(</span>r<span class="token string">'^showgrade/'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>show_grade<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'show_grade'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-
+                <h1 id="django项目基本配置"><a href="#django项目基本配置" class="headerlink" title="django项目基本配置"></a>django项目基本配置</h1><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>这里取名为HelloDjango</p>
+<pre class=" language-python"><code class="language-python">python django<span class="token operator">-</span>admin<span class="token punctuation">.</span>py startproject HelloDjango</code></pre>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>HelloDjango<br>├── manage.py<br>└── HelloDjango<br>    ├── <strong>init</strong>.py<br>    ├── settings.py<br>    ├── urls.py<br>    └── wsgi.py<br>新建一个 HelloDjango 目录，其中还有一个HelloDjango目录，这个子目录 HelloDjango中是一些项目的设置 settings.py 文件，总的urls配置文件 urls.py 以及部署服务器时用到的 wsgi.py 文件， <strong>init</strong>.py 是python包的目录结构必须的，与调用有关。</p>
+<h2 id="新建一个应用（app）"><a href="#新建一个应用（app）" class="headerlink" title="新建一个应用（app）"></a>新建一个应用（app）</h2><p>这里取名为learn</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># learn 是一个app的名称</span>
+python manage<span class="token punctuation">.</span>py startapp learn </code></pre>
+<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><p>learn/<br>├── <strong>init</strong>.py<br>├── admin.py<br>├── models.py<br>├── tests.py<br>└── views.py</p>
+<h2 id="修改setting-py"><a href="#修改setting-py" class="headerlink" title="修改setting.py"></a>修改setting.py</h2><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><pre class=" language-python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'django.contrib.admin'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.contrib.auth'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.contrib.contenttypes'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.contrib.sessions'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.contrib.messages'</span><span class="token punctuation">,</span>
+    <span class="token string">'django.contrib.staticfiles'</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true"># 这里注册learn</span>
+    <span class="token string">'learn'</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span></code></pre>
-<h3 id="views-py代码"><a href="#views-py代码" class="headerlink" title="views.py代码"></a>views.py代码</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render
+<h3 id="配置templates"><a href="#配置templates" class="headerlink" title="配置templates"></a>配置templates</h3><p>在第一个HelloDjango文件夹下添加一个名为templates的文件夹，用于存放html并进行路径配置，如下：</p>
+<pre class=" language-python"><code class="language-python">TEMPLATES <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token string">'BACKEND'</span><span class="token punctuation">:</span> <span class="token string">'django.template.backends.django.DjangoTemplates'</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true"># 添加路径</span>
+        <span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">'APP_DIRS'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'context_processors'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token string">'django.template.context_processors.debug'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.template.context_processors.request'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.contrib.auth.context_processors.auth'</span><span class="token punctuation">,</span>
+                <span class="token string">'django.contrib.messages.context_processors.messages'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre>
+<p>添加路径为</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
+<h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>默认的数据库是sqlite，已经配置好的代码如下：</p>
+<pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.sqlite3'</span><span class="token punctuation">,</span>
+        <span class="token string">'NAME'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'db.sqlite3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>连接mysql</p>
+<pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+             <span class="token comment" spellcheck="true"># 把sqlite改成mysql</span>
+             <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>
+             <span class="token comment" spellcheck="true"># 填写数据库名称</span>
+             <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'test'</span><span class="token punctuation">,</span>
+             <span class="token comment" spellcheck="true"># 用户名称</span>
+             <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+             <span class="token comment" spellcheck="true"># 密码</span>
+             <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'123456'</span><span class="token punctuation">,</span>
+             <span class="token comment" spellcheck="true"># 主机IP</span>
+             <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'192.168.223.128'</span><span class="token punctuation">,</span>
+             <span class="token comment" spellcheck="true"># 端口号，默认3306</span>
+             <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token number">3306</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这里还要在init.py中添加一个代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
+pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="配置语言"><a href="#配置语言" class="headerlink" title="配置语言"></a>配置语言</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 中文</span>
+LANGUAGE_CODE <span class="token operator">=</span> <span class="token string">'zh-hans'</span>
+<span class="token comment" spellcheck="true"># 时区，固定</span>
+TIME_ZONE <span class="token operator">=</span> <span class="token string">'Asia/Shanghai'</span>
 
-<span class="token comment" spellcheck="true"># Create your views here.</span>
-<span class="token keyword">from</span> Five<span class="token punctuation">.</span>models <span class="token keyword">import</span> Student<span class="token punctuation">,</span> Grade
+USE_I18N <span class="token operator">=</span> <span class="token boolean">True</span>
 
-
-<span class="token keyword">def</span> <span class="token function">show_grade</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-
-    grades <span class="token operator">=</span> Grade<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'show_grade.html'</span><span class="token punctuation">,</span> context<span class="token operator">=</span>locals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true"># g_id用来接收request.GET的参数</span>
-<span class="token keyword">def</span> <span class="token function">show_student</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> g_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 这里s_grade改成s_grade_id也可以</span>
-    students <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>s_grade<span class="token operator">=</span>g_id<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'show_student.html'</span><span class="token punctuation">,</span> context<span class="token operator">=</span>locals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h3 id="show-grade-html"><a href="#show-grade-html" class="headerlink" title="show_grade.html"></a>show_grade.html</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>show_grade<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-   {% for grade in grades %}
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{% url <span class="token punctuation">'</span>five:show_student<span class="token punctuation">'</span> grade.id %}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ grade.g_name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-   {% endfor %}
-
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="show-student-html"><a href="#show-student-html" class="headerlink" title="show_student.html"></a>show_student.html</h3><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>show_student<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    {% for student in students %}
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ student.s_name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-    {% endfor %}
-
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="数据库部分"><a href="#数据库部分" class="headerlink" title="数据库部分"></a>数据库部分</h2><h3 id="Five-student表"><a href="#Five-student表" class="headerlink" title="Five_student表"></a>Five_student表</h3><h4 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- auto-generated definition</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> Five_student
-<span class="token punctuation">(</span>
-    id         <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
-    s_name     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    s_grade_id <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">references</span> Five_grade
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">create</span> <span class="token keyword">index</span> Five_student_dcb74a5b
-    <span class="token keyword">on</span> Five_student <span class="token punctuation">(</span>s_grade_id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加学生"><a href="#添加学生" class="headerlink" title="添加学生"></a>添加学生</h5><p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/1.png" alt="学生表"></p>
-<h3 id="Five-grade表"><a href="#Five-grade表" class="headerlink" title="Five_grade表"></a>Five_grade表</h3><h4 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- auto-generated definition</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> Five_grade
-<span class="token punctuation">(</span>
-    id     <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
-    g_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加班级"><a href="#添加班级" class="headerlink" title="添加班级"></a>添加班级</h5><p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/2.png" alt="班级表"></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>访问<strong>localhost:8000/five/showgrade</strong></p>
-<p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/3.png" alt></p>
-<p>点击班级(python，java，c++)查看对应学生</p>
-<p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/4.png" alt></p>
+USE_L10N <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token comment" spellcheck="true"># 这里改成False</span>
+USE_TZ <span class="token operator">=</span> <span class="token boolean">False</span>
+<span class="token comment" spellcheck="true">### 配置static文件路径，存放css，js</span>
+在第一个HelloDjango文件夹下创建一个名为static的文件夹，在setting<span class="token punctuation">.</span>py最后添加如下代码：
+​```python
+STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span><span class="token string">'static'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre>
 
             </div>
             <hr/>
@@ -532,7 +519,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="liangzero.com/2020/02/23/django模板一对多/">liangzero.com/2020/02/23/django模板一对多/</a>
+                    <a href="liangzero.com/2020/02/26/django项目基本配置/">liangzero.com/2020/02/26/django项目基本配置/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1004,27 +991,26 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/24/django结构简介/">
+                <a href="/2020/02/26/django路由分配/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="django结构简介">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="django路由分配">
                         
-                        <span class="card-title">django结构简介</span>
+                        <span class="card-title">django路由分配</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Django流程介绍又或者是这样的结构图：
-MVC结构MVC结构是众所周知的模式：
-M——model（模型）管理应用程序的状态（通常存储到数据库中），并约束改变状态的行为（或者叫做“业务规则”）。
-V——view（视图）负责把数据格式化后呈
+                            django路由分配总路由配置先创建一个app（python manage.py startapp App），找到urls.py，添加代码
+from django.conf.urls import url, include
+from dja
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
                         </span>
                         <span class="publish-author">
                             
@@ -1056,31 +1042,27 @@ V——view（视图）负责把数据格式化后呈
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/15/django模板OnetoOne/">
+                <a href="/2020/02/24/django结构简介/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="django模板OnetoOne">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="django结构简介">
                         
-                        <span class="card-title">django模板OnetoOne</span>
+                        <span class="card-title">django结构简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Django模板OnetoOne以人绑定身份证为例子，以下是代码
-models.py代码import django
-from django.db import models
-
-# Create your models here.
-
-
-#主表
+                            Django流程介绍又或者是这样的结构图：
+MVC结构MVC结构是众所周知的模式：
+M——model（模型）管理应用程序的状态（通常存储到数据库中），并约束改变状态的行为（或者叫做“业务规则”）。
+V——view（视图）负责把数据格式化后呈
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             

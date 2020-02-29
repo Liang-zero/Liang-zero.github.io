@@ -4,6 +4,131 @@
   
     
     <entry>
+      <title>django模板</title>
+      <link href="/2020/02/26/django%E6%A8%A1%E6%9D%BF/"/>
+      <url>/2020/02/26/django%E6%A8%A1%E6%9D%BF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django模板"><a href="#django模板" class="headerlink" title="django模板"></a>django模板</h1><h2 id="templates模板语言，也就是django中的html"><a href="#templates模板语言，也就是django中的html" class="headerlink" title="templates模板语言，也就是django中的html"></a>templates模板语言，也就是django中的html</h2><h3 id="block"><a href="#block" class="headerlink" title="block"></a>block</h3><p>写一个base.html</p><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>{% block title %}默认标题{% endblock %}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>{% block content %}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>{% endblock %}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre><p>这个是一个基础模板，以后写其他html可以继承这个模板 。</p><pre class=" language-python"><code class="language-python"><span class="token punctuation">{</span><span class="token operator">%</span> block 加自己定义的名字 <span class="token operator">%</span><span class="token punctuation">}</span>这边可以一写需要继承的东西<span class="token punctuation">{</span><span class="token operator">%</span> endblock <span class="token operator">%</span><span class="token punctuation">}</span>```<span class="token comment" spellcheck="true">### extends</span>写一个test<span class="token punctuation">.</span>html```html<span class="token operator">&lt;</span>!DOCTYPE html<span class="token operator">></span><span class="token operator">&lt;</span>html<span class="token operator">></span><span class="token operator">&lt;</span>head<span class="token operator">></span><span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"generator"</span> content<span class="token operator">=</span><span class="token string">"Hexo 3.9.0"</span><span class="token operator">></span> <span class="token operator">&lt;</span>title<span class="token operator">></span>欢迎光临<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> href<span class="token operator">=</span><span class="token string">"/css/prism-tomorrow.css"</span> type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><span class="token operator">&lt;</span>body<span class="token operator">></span><span class="token punctuation">{</span><span class="token operator">%</span> extends <span class="token string">'base.html'</span> <span class="token operator">%</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token operator">%</span> block title <span class="token operator">%</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token operator">%</span> endblock <span class="token operator">%</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token operator">%</span> block content <span class="token operator">%</span><span class="token punctuation">}</span>这里是首页，欢迎光临<span class="token punctuation">{</span><span class="token operator">%</span> endblock <span class="token operator">%</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre><p>注意：</p><pre class=" language-bash"><code class="language-bash">extends继承，如果写了<span class="token punctuation">{</span>% block title %<span class="token punctuation">}</span>那么默认的就会本顶掉，<span class="token punctuation">{</span>% block content %<span class="token punctuation">}</span>也一样</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django反向解析</title>
+      <link href="/2020/02/26/django%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90/"/>
+      <url>/2020/02/26/django%E5%8F%8D%E5%90%91%E8%A7%A3%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django反向解析"><a href="#django反向解析" class="headerlink" title="django反向解析"></a>django反向解析</h1><h2 id="url硬编码"><a href="#url硬编码" class="headerlink" title="url硬编码"></a>url硬编码</h2><p>硬编码的url地址是固定的，当更改路由分发的时候就会失效</p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/goods/index/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>url硬编码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></code></pre><h2 id="url软编码"><a href="#url软编码" class="headerlink" title="url软编码"></a>url软编码</h2><p>软编码的url是动态的，不会随着路由分发的改变而发生变化</p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>&lt;a href="{% url "good:index" 这里可以添加参数 %}">url软编码<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></code></pre><p>这里的good是总路由配置的命名空间namespace，index是分发路由时子路由url配置的名称name</p><h2 id="反向解析"><a href="#反向解析" class="headerlink" title="反向解析"></a>反向解析</h2><p>在view模板中用<strong>reverse(‘goods:index’)</strong>进行反向解析<br>一般和<strong>redicrect</strong>一起用，进行重定向</p><pre class=" language-python"><code class="language-python"><span class="token keyword">return</span> redirect<span class="token punctuation">(</span>reverse<span class="token punctuation">(</span><span class="token string">'good:index'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django视图与网址</title>
+      <link href="/2020/02/26/django%E8%A7%86%E5%9B%BE%E4%B8%8E%E7%BD%91%E5%9D%80/"/>
+      <url>/2020/02/26/django%E8%A7%86%E5%9B%BE%E4%B8%8E%E7%BD%91%E5%9D%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django视图与网址"><a href="#django视图与网址" class="headerlink" title="django视图与网址"></a>django视图与网址</h1><p>实现url与view的交互，以在网页上做加减为例子</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><h3 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url<span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin<span class="token keyword">from</span> daya_test <span class="token keyword">import</span> viewsurlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    url<span class="token punctuation">(</span>r<span class="token string">'^add/$'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>add<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'add'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>     url<span class="token punctuation">(</span>r<span class="token string">'^admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><h3 id="view-py"><a href="#view-py" class="headerlink" title="view.py"></a>view.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render<span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span>  HttpResponse<span class="token comment" spellcheck="true"># Create your views here.</span><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true"># 或者是a=request.GET.get(a)</span>    a<span class="token operator">=</span>request<span class="token punctuation">.</span>GET<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span>    b<span class="token operator">=</span>request<span class="token punctuation">.</span>GET<span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">]</span>    c<span class="token operator">=</span>int<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">+</span>int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span>str<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><h3 id="访问需要加上参数"><a href="#访问需要加上参数" class="headerlink" title="访问需要加上参数"></a>访问需要加上参数</h3><p>访问<strong>localhost:8000/add?a=4&amp;b=5</strong><br>就可以返回结果9</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><h3 id="urls-py-1"><a href="#urls-py-1" class="headerlink" title="urls.py"></a>urls.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url<span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin<span class="token keyword">from</span> daya_test <span class="token keyword">import</span> viewsurlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token comment" spellcheck="true"># 这里(\d+)是正则表达式，可以表示两个参数</span>    url<span class="token punctuation">(</span>r<span class="token string">'^add/(\d+)/(\d+)'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>add<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'add'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>     url<span class="token punctuation">(</span>r<span class="token string">'^admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><h3 id="view-py-1"><a href="#view-py-1" class="headerlink" title="view.py"></a>view.py</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 这里要给函数传递两个参数与urls.py中保持一致</span><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>    c <span class="token operator">=</span> int<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">+</span>int<span class="token punctuation">(</span>b<span class="token punctuation">)</span>    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span>str<span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><p>这个时候只要访问<strong>localhost:8000/add/4/5</strong>，结果为9</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django路由分配</title>
+      <link href="/2020/02/26/django%E8%B7%AF%E7%94%B1%E5%88%86%E9%85%8D/"/>
+      <url>/2020/02/26/django%E8%B7%AF%E7%94%B1%E5%88%86%E9%85%8D/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django路由分配"><a href="#django路由分配" class="headerlink" title="django路由分配"></a>django路由分配</h1><h2 id="总路由配置"><a href="#总路由配置" class="headerlink" title="总路由配置"></a>总路由配置</h2><p>先创建一个app（python manage.py startapp App），找到urls.py，添加代码</p><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url<span class="token punctuation">,</span> include<span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> adminurlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>    url<span class="token punctuation">(</span>r<span class="token string">'^admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 添加一个namespace名称空间</span>    url<span class="token punctuation">(</span>r<span class="token string">'^app/'</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span><span class="token string">'App.urls'</span><span class="token punctuation">,</span> namespace<span class="token operator">=</span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><h2 id="路由分发"><a href="#路由分发" class="headerlink" title="路由分发"></a>路由分发</h2><p>接着再App文件夹下创建一个urls.py的文件，并添加代码</p><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url<span class="token keyword">from</span> App <span class="token keyword">import</span> viewsurlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>   <span class="token comment" spellcheck="true"># show_student是view.py文件里的一个函数，当访问时就会执行这个函数，name设置一个名字</span>    url<span class="token punctuation">(</span>r<span class="token string">'^students/'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>show_student<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'show_student'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><h2 id="访问url"><a href="#访问url" class="headerlink" title="访问url"></a>访问url</h2><p>1.开启服务器命令<strong>python manage.py runserver</strong><br>2.访问<strong>localhost:8000/app/students/</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django项目基本配置</title>
+      <link href="/2020/02/26/django%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+      <url>/2020/02/26/django%E9%A1%B9%E7%9B%AE%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django项目基本配置"><a href="#django项目基本配置" class="headerlink" title="django项目基本配置"></a>django项目基本配置</h1><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>这里取名为HelloDjango</p><pre class=" language-python"><code class="language-python">python django<span class="token operator">-</span>admin<span class="token punctuation">.</span>py startproject HelloDjango</code></pre><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>HelloDjango<br>├── manage.py<br>└── HelloDjango<br>    ├── <strong>init</strong>.py<br>    ├── settings.py<br>    ├── urls.py<br>    └── wsgi.py<br>新建一个 HelloDjango 目录，其中还有一个HelloDjango目录，这个子目录 HelloDjango中是一些项目的设置 settings.py 文件，总的urls配置文件 urls.py 以及部署服务器时用到的 wsgi.py 文件， <strong>init</strong>.py 是python包的目录结构必须的，与调用有关。</p><h2 id="新建一个应用（app）"><a href="#新建一个应用（app）" class="headerlink" title="新建一个应用（app）"></a>新建一个应用（app）</h2><p>这里取名为learn</p><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># learn 是一个app的名称</span>python manage<span class="token punctuation">.</span>py startapp learn </code></pre><h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><p>learn/<br>├── <strong>init</strong>.py<br>├── admin.py<br>├── models.py<br>├── tests.py<br>└── views.py</p><h2 id="修改setting-py"><a href="#修改setting-py" class="headerlink" title="修改setting.py"></a>修改setting.py</h2><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><pre class=" language-python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token string">'django.contrib.admin'</span><span class="token punctuation">,</span>    <span class="token string">'django.contrib.auth'</span><span class="token punctuation">,</span>    <span class="token string">'django.contrib.contenttypes'</span><span class="token punctuation">,</span>    <span class="token string">'django.contrib.sessions'</span><span class="token punctuation">,</span>    <span class="token string">'django.contrib.messages'</span><span class="token punctuation">,</span>    <span class="token string">'django.contrib.staticfiles'</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 这里注册learn</span>    <span class="token string">'learn'</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><h3 id="配置templates"><a href="#配置templates" class="headerlink" title="配置templates"></a>配置templates</h3><p>在第一个HelloDjango文件夹下添加一个名为templates的文件夹，用于存放html并进行路径配置，如下：</p><pre class=" language-python"><code class="language-python">TEMPLATES <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token punctuation">{</span>        <span class="token string">'BACKEND'</span><span class="token punctuation">:</span> <span class="token string">'django.template.backends.django.DjangoTemplates'</span><span class="token punctuation">,</span>        <span class="token comment" spellcheck="true"># 添加路径</span>        <span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token string">'APP_DIRS'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>        <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>            <span class="token string">'context_processors'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>                <span class="token string">'django.template.context_processors.debug'</span><span class="token punctuation">,</span>                <span class="token string">'django.template.context_processors.request'</span><span class="token punctuation">,</span>                <span class="token string">'django.contrib.auth.context_processors.auth'</span><span class="token punctuation">,</span>                <span class="token string">'django.contrib.messages.context_processors.messages'</span><span class="token punctuation">,</span>            <span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre><p>添加路径为</p><pre class=" language-python"><code class="language-python"><span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>        <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre><h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>默认的数据库是sqlite，已经配置好的代码如下：</p><pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.sqlite3'</span><span class="token punctuation">,</span>        <span class="token string">'NAME'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'db.sqlite3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>连接mysql</p><pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>             <span class="token comment" spellcheck="true"># 把sqlite改成mysql</span>             <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true"># 填写数据库名称</span>             <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'test'</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true"># 用户名称</span>             <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true"># 密码</span>             <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'123456'</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true"># 主机IP</span>             <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'192.168.223.128'</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true"># 端口号，默认3306</span>             <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token number">3306</span><span class="token punctuation">,</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>这里还要在init.py中添加一个代码：</p><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pymysqlpymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><h3 id="配置语言"><a href="#配置语言" class="headerlink" title="配置语言"></a>配置语言</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 中文</span>LANGUAGE_CODE <span class="token operator">=</span> <span class="token string">'zh-hans'</span><span class="token comment" spellcheck="true"># 时区，固定</span>TIME_ZONE <span class="token operator">=</span> <span class="token string">'Asia/Shanghai'</span>USE_I18N <span class="token operator">=</span> <span class="token boolean">True</span>USE_L10N <span class="token operator">=</span> <span class="token boolean">True</span><span class="token comment" spellcheck="true"># 这里改成False</span>USE_TZ <span class="token operator">=</span> <span class="token boolean">False</span><span class="token comment" spellcheck="true">### 配置static文件路径，存放css，js</span>在第一个HelloDjango文件夹下创建一个名为static的文件夹，在setting<span class="token punctuation">.</span>py最后添加如下代码：​```pythonSTATICFILES_DIRS <span class="token operator">=</span> <span class="token punctuation">[</span>    os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span><span class="token string">'static'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>django结构简介</title>
       <link href="/2020/02/24/django%E7%BB%93%E6%9E%84%E7%AE%80%E4%BB%8B/"/>
       <url>/2020/02/24/django%E7%BB%93%E6%9E%84%E7%AE%80%E4%BB%8B/</url>
@@ -13,7 +138,7 @@
       
       <categories>
           
-          <category> django </category>
+          <category> django1.9.13 </category>
           
       </categories>
       
@@ -38,7 +163,7 @@
       
       <categories>
           
-          <category> django </category>
+          <category> django1.9.13 </category>
           
       </categories>
       
@@ -63,7 +188,7 @@
       
       <categories>
           
-          <category> django </category>
+          <category> django1.9.13 </category>
           
       </categories>
       
