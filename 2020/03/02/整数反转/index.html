@@ -4,14 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="django模板一对多, Noback">
-    <meta name="description" content="django模板一对多以一个班级有多个学生为例子, 实现点击班级查看对应学生
-djngo代码部分models.pyfrom django.db import models
-
-# Create your models here.
-
-
-clas">
+    <meta name="keywords" content="整数反转, Noback">
+    <meta name="description" content="整数反转
+代码class Solution(object):
+    def reverse(self, x):
+        &#34;&#34;&#34;
+        :type x: int
+        :rtype: int
+        &#34;&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ clas">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>django模板一对多 | Noback</title>
+    <title>整数反转 | Noback</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@ clas">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">django模板一对多</h1>
+                    <h1 class="description center-align post-title">整数反转</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@ clas">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -380,8 +380,8 @@ clas">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/django1-9-13/" class="post-category">
-                                django1.9.13
+                            <a href="/categories/每日一题/" class="post-category">
+                                每日一题
                             </a>
                         
                     </div>
@@ -393,7 +393,7 @@ clas">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-03-02
                 </div>
                 
 
@@ -402,7 +402,7 @@ clas">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    338
+                    65
                 </div>
                 
 
@@ -425,98 +425,26 @@ clas">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="django模板一对多"><a href="#django模板一对多" class="headerlink" title="django模板一对多"></a>django模板一对多</h1><p>以一个班级有多个学生为例子, 实现点击班级查看对应学生</p>
-<h3 id="djngo代码部分"><a href="#djngo代码部分" class="headerlink" title="djngo代码部分"></a>djngo代码部分</h3><h3 id="models-py"><a href="#models-py" class="headerlink" title="models.py"></a>models.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
-
-<span class="token comment" spellcheck="true"># Create your models here.</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Grade</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    g_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    s_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># 设置student外键</span>
-    s_grade <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span>Grade<span class="token punctuation">)</span></code></pre>
-<h3 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url
-
-<span class="token keyword">from</span> Five <span class="token keyword">import</span> views
-
-urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
-    url<span class="token punctuation">(</span>r<span class="token string">'^showstudent/(\d+)'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>show_student<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'show_student'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    url<span class="token punctuation">(</span>r<span class="token string">'^showgrade/'</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>show_grade<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'show_grade'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-<span class="token punctuation">]</span></code></pre>
-<h3 id="views-py代码"><a href="#views-py代码" class="headerlink" title="views.py代码"></a>views.py代码</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render
-
-<span class="token comment" spellcheck="true"># Create your views here.</span>
-<span class="token keyword">from</span> Five<span class="token punctuation">.</span>models <span class="token keyword">import</span> Student<span class="token punctuation">,</span> Grade
-
-
-<span class="token keyword">def</span> <span class="token function">show_grade</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-
-    grades <span class="token operator">=</span> Grade<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'show_grade.html'</span><span class="token punctuation">,</span> context<span class="token operator">=</span>locals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true"># g_id用来接收request.GET的参数</span>
-<span class="token keyword">def</span> <span class="token function">show_student</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> g_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 这里s_grade改成s_grade_id也可以</span>
-    students <span class="token operator">=</span> Student<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>s_grade<span class="token operator">=</span>g_id<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'show_student.html'</span><span class="token punctuation">,</span> context<span class="token operator">=</span>locals<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h3 id="show-grade-html"><a href="#show-grade-html" class="headerlink" title="show_grade.html"></a>show_grade.html</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>show_grade<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-   {% for grade in grades %}
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{% url <span class="token punctuation">'</span>five:show_student<span class="token punctuation">'</span> grade.id %}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ grade.g_name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-   {% endfor %}
-
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="show-student-html"><a href="#show-student-html" class="headerlink" title="show_student.html"></a>show_student.html</h3><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>show_student<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    {% for student in students %}
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>{{ student.s_name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
-    {% endfor %}
-
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="数据库部分"><a href="#数据库部分" class="headerlink" title="数据库部分"></a>数据库部分</h2><h3 id="Five-student表"><a href="#Five-student表" class="headerlink" title="Five_student表"></a>Five_student表</h3><h4 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- auto-generated definition</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> Five_student
-<span class="token punctuation">(</span>
-    id         <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
-    s_name     <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    s_grade_id <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">references</span> Five_grade
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">create</span> <span class="token keyword">index</span> Five_student_dcb74a5b
-    <span class="token keyword">on</span> Five_student <span class="token punctuation">(</span>s_grade_id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加学生"><a href="#添加学生" class="headerlink" title="添加学生"></a>添加学生</h5><p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/1.png" alt="学生表"></p>
-<h3 id="Five-grade表"><a href="#Five-grade表" class="headerlink" title="Five_grade表"></a>Five_grade表</h3><h4 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h4><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- auto-generated definition</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> Five_grade
-<span class="token punctuation">(</span>
-    id     <span class="token keyword">integer</span>     <span class="token operator">not</span> <span class="token boolean">null</span>
-        <span class="token keyword">primary</span> <span class="token keyword">key</span> autoincrement<span class="token punctuation">,</span>
-    g_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="添加班级"><a href="#添加班级" class="headerlink" title="添加班级"></a>添加班级</h5><p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/2.png" alt="班级表"></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>访问<strong>localhost:8000/five/showgrade</strong></p>
-<p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/3.png" alt></p>
-<p>点击班级(python，java，c++)查看对应学生</p>
-<p><img src="https://gitee.com/silent-666/images/raw/f9b3c80ac587da831b1fddfab166c1a94dc5700c/django%E6%A8%A1%E6%9D%BF%E4%B8%80%E5%AF%B9%E5%A4%9A/4.png" alt></p>
+                <h1 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h1><p><img src="https://gitee.com/silent-666/images/raw/70286378561c330b434afd53020d716a735ead48/leetcode/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.jpg" alt="题目"></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type x: int
+        :rtype: int
+        """</span>
+        s <span class="token operator">=</span> <span class="token number">0</span>
+        str_x <span class="token operator">=</span> str<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        l <span class="token operator">=</span> len<span class="token punctuation">(</span>str_x<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            num <span class="token operator">=</span> int<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">10</span>
+            s<span class="token operator">+=</span>num<span class="token operator">*</span><span class="token number">10</span><span class="token operator">**</span><span class="token punctuation">(</span>l<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">)</span>   
+        <span class="token keyword">if</span> <span class="token operator">-</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span> <span class="token operator">&lt;</span> s <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span>s
+            <span class="token keyword">return</span> s    
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span></code></pre>
+<p><img src="https://gitee.com/silent-666/images/raw/6ef6d49991cc05e9678efdf2f6c9cf22020b887f/leetcode/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC1.jpg" alt></p>
 
             </div>
             <hr/>
@@ -542,7 +470,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/02/23/django模板一对多/">http://yoursite.com/2020/02/23/django模板一对多/</a>
+                    <a href="http://yoursite.com/2020/03/02/整数反转/">http://yoursite.com/2020/03/02/整数反转/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -580,8 +508,8 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -1014,34 +942,36 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/24/django结构简介/">
+                <a href="/2020/03/02/两数之和/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="django结构简介">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="两数之和">
                         
-                        <span class="card-title">django结构简介</span>
+                        <span class="card-title">两数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Django流程介绍又或者是这样的结构图：
-MVC结构MVC结构是众所周知的模式：
-M——model（模型）管理应用程序的状态（通常存储到数据库中），并约束改变状态的行为（或者叫做“业务规则”）。
-V——view（视图）负责把数据格式化后呈
+                            两数之和
+代码class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :ty
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/django1-9-13/" class="post-category">
-                                    django1.9.13
+                            <a href="/categories/每日一题/" class="post-category">
+                                    每日一题
                                 </a>
                             
                             
@@ -1051,8 +981,8 @@ V——view（视图）负责把数据格式化后呈
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -1066,31 +996,24 @@ V——view（视图）负责把数据格式化后呈
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/15/django模板OnetoOne/">
+                <a href="/2020/03/01/django模板-数据库/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="django模板OnetoOne">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="django模板(数据库)">
                         
-                        <span class="card-title">django模板OnetoOne</span>
+                        <span class="card-title">django模板(数据库)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Django模板OnetoOne以人绑定身份证为例子，以下是代码
-models.py代码import django
-from django.db import models
-
-# Create your models here.
-
-
-#主表
+                            django模板(数据库)Django 模型是与数据库相关的，与数据库相关的代码一般写在 models.py 中，Django 支持 sqlite3, MySQL, PostgreSQL等数据库，只需要在settings.py中配置即可，不
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
                             </span>
                         <span class="publish-author">
                             

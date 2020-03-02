@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>两数之和</title>
+      <link href="/2020/03/02/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+      <url>/2020/03/02/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p><img src="https://gitee.com/silent-666/images/raw/70286378561c330b434afd53020d716a735ead48/leetcode/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.jpg" alt="题目"></p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type nums: List[int]        :type target: int        :rtype: List[int]        """</span>        dict<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>        <span class="token keyword">for</span> index<span class="token punctuation">,</span>num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>            another_num <span class="token operator">=</span> target<span class="token operator">-</span>num            <span class="token keyword">if</span> another_num <span class="token keyword">in</span> dict<span class="token punctuation">:</span>                <span class="token keyword">return</span> <span class="token punctuation">[</span>dict<span class="token punctuation">[</span>another_num<span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">]</span>            dict<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> index        <span class="token keyword">return</span> None</code></pre><p><img src="https://gitee.com/silent-666/images/raw/a7d4cc5644f3d1187361c40b2f35d7b4f5d5d429/leetcode/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C1.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>整数反转</title>
+      <link href="/2020/03/02/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"/>
+      <url>/2020/03/02/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</url>
+      
+        <content type="html"><![CDATA[<h1 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h1><p><img src="https://gitee.com/silent-666/images/raw/70286378561c330b434afd53020d716a735ead48/leetcode/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.jpg" alt="题目"></p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type x: int        :rtype: int        """</span>        s <span class="token operator">=</span> <span class="token number">0</span>        str_x <span class="token operator">=</span> str<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>        l <span class="token operator">=</span> len<span class="token punctuation">(</span>str_x<span class="token punctuation">)</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>            num <span class="token operator">=</span> int<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">10</span>            s<span class="token operator">+=</span>num<span class="token operator">*</span><span class="token number">10</span><span class="token operator">**</span><span class="token punctuation">(</span>l<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">)</span>           <span class="token keyword">if</span> <span class="token operator">-</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span> <span class="token operator">&lt;</span> s <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token operator">**</span><span class="token number">31</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>            <span class="token keyword">if</span> x<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>                <span class="token keyword">return</span> <span class="token operator">-</span>s            <span class="token keyword">return</span> s            <span class="token keyword">else</span><span class="token punctuation">:</span>            <span class="token keyword">return</span> <span class="token number">0</span></code></pre><p><img src="https://gitee.com/silent-666/images/raw/6ef6d49991cc05e9678efdf2f6c9cf22020b887f/leetcode/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC1.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>django模板(数据库)</title>
+      <link href="/2020/03/01/django%E6%A8%A1%E6%9D%BF-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <url>/2020/03/01/django%E6%A8%A1%E6%9D%BF-%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="django模板-数据库"><a href="#django模板-数据库" class="headerlink" title="django模板(数据库)"></a>django模板(数据库)</h1><p>Django 模型是与数据库相关的，与数据库相关的代码一般写在 models.py 中，Django 支持 sqlite3, MySQL, PostgreSQL等数据库，只需要在settings.py中配置即可，不用更改models.py中的代码，丰富的API极大的方便了使用。</p><h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models<span class="token comment" spellcheck="true"># Create your models here.</span><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>  name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>  age <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><p>这是person表，这个表有name和age两个字段。接着执行<strong>python manage.py makemigrations</strong> 再执行<strong>python manage.py migrate</strong>就生成了迁移文件和写入数据库，如何对模板发生更改，就再执行这两个命令即可。</p><h2 id="python-shell用法"><a href="#python-shell用法" class="headerlink" title="python shell用法"></a>python shell用法</h2><p><strong>python manage.py shell</strong>进入shell</p><h3 id="新建对象几个方法"><a href="#新建对象几个方法" class="headerlink" title="新建对象几个方法"></a>新建对象几个方法</h3><pre class=" language-python"><code class="language-python"><span class="token number">1.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>create<span class="token punctuation">(</span>name<span class="token operator">=</span> <span class="token string">"Jordan"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token number">2.</span>p <span class="token operator">=</span> Person<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Kobe"</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">)</span>p<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token number">3.</span>p <span class="token operator">=</span> Person<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"James"</span><span class="token punctuation">)</span>p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">23</span>p<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 这种方法是防止重复很好的方法，但是速度要相对慢些，返回一个元组，第一个为Person对象，第二个为True或False, 新建时返回的是True, 已经存在时返回False.</span><span class="token number">4.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get_or_create<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">)</span></code></pre><h3 id="获取对象的几个方法"><a href="#获取对象的几个方法" class="headerlink" title="获取对象的几个方法"></a>获取对象的几个方法</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 获取所有的对象值</span><span class="token number">1.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 切片形式获取，获取10个人</span><span class="token number">2.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># get用来获取一个对象，如果需要获取满足条件的一些人，就要用到filter</span><span class="token number">3.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>name<span class="token operator">=</span>name<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 等于</span><span class="token number">4.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#  名称严格等于 "abc" 的人</span><span class="token number">5.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__exact<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 名称为 abc 但是不区分大小写，可以找到 ABC, Abc, aBC，这些都符合条件</span><span class="token number">6.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__iexact<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 名称中包含 "abc"的人</span><span class="token number">7.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__contains<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 名称中包含 "abc"，且abc不区分大小写</span><span class="token number">8.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__icontains<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正则表达式查询</span><span class="token number">9.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__regex<span class="token operator">=</span><span class="token string">"^abc"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 正则表达式不区分大小写,filter是找出满足条件的，当然也有排除符合某条件的 </span><span class="token number">10.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__iregex<span class="token operator">=</span><span class="token string">"^abc"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 排除包含 WZ 的Person对象 </span><span class="token number">11.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>exclude<span class="token punctuation">(</span>name__contains<span class="token operator">=</span><span class="token string">"WZ"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 找出名称含有abc, 但是排除年龄是23岁的</span><span class="token number">12.</span>Person<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name__contains<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>exclude<span class="token punctuation">(</span>age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">)</span>  </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> django1.9.13 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>django模板</title>
       <link href="/2020/02/26/django%E6%A8%A1%E6%9D%BF/"/>
       <url>/2020/02/26/django%E6%A8%A1%E6%9D%BF/</url>
