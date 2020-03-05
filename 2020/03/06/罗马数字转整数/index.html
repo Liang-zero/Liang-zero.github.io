@@ -4,10 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="django项目基本配置, Noback">
-    <meta name="description" content="django项目基本配置新建项目这里取名为HelloDjango
-python django-admin.py startproject HelloDjango
-目录结构HelloDjango├── manage.py└── HelloDj">
+    <meta name="keywords" content="回文数, Noback">
+    <meta name="description" content="罗马数字转整数罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@ python django-admin.py startproject HelloDjango
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>django项目基本配置 | Noback</title>
+    <title>回文数 | Noback</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -242,12 +240,12 @@ python django-admin.py startproject HelloDjango
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">django项目基本配置</h1>
+                    <h1 class="description center-align post-title">回文数</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +362,8 @@ python django-admin.py startproject HelloDjango
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -376,8 +374,8 @@ python django-admin.py startproject HelloDjango
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/django1-9-13/" class="post-category">
-                                django1.9.13
+                            <a href="/categories/每日一题/" class="post-category">
+                                每日一题
                             </a>
                         
                     </div>
@@ -389,7 +387,7 @@ python django-admin.py startproject HelloDjango
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-03-06
                 </div>
                 
 
@@ -398,14 +396,14 @@ python django-admin.py startproject HelloDjango
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    450
+                    241
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -421,89 +419,7 @@ python django-admin.py startproject HelloDjango
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="django项目基本配置"><a href="#django项目基本配置" class="headerlink" title="django项目基本配置"></a>django项目基本配置</h1><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>这里取名为HelloDjango</p>
-<pre class=" language-python"><code class="language-python">python django<span class="token operator">-</span>admin<span class="token punctuation">.</span>py startproject HelloDjango</code></pre>
-<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>HelloDjango<br>├── manage.py<br>└── HelloDjango<br>    ├── <strong>init</strong>.py<br>    ├── settings.py<br>    ├── urls.py<br>    └── wsgi.py<br>新建一个 HelloDjango 目录，其中还有一个HelloDjango目录，这个子目录 HelloDjango中是一些项目的设置 settings.py 文件，总的urls配置文件 urls.py 以及部署服务器时用到的 wsgi.py 文件， <strong>init</strong>.py 是python包的目录结构必须的，与调用有关。</p>
-<h2 id="新建一个应用（app）"><a href="#新建一个应用（app）" class="headerlink" title="新建一个应用（app）"></a>新建一个应用（app）</h2><p>这里取名为learn</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># learn 是一个app的名称</span>
-python manage<span class="token punctuation">.</span>py startapp learn </code></pre>
-<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><p>learn/<br>├── <strong>init</strong>.py<br>├── admin.py<br>├── models.py<br>├── tests.py<br>└── views.py</p>
-<h2 id="修改setting-py"><a href="#修改setting-py" class="headerlink" title="修改setting.py"></a>修改setting.py</h2><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><pre class=" language-python"><code class="language-python">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'django.contrib.admin'</span><span class="token punctuation">,</span>
-    <span class="token string">'django.contrib.auth'</span><span class="token punctuation">,</span>
-    <span class="token string">'django.contrib.contenttypes'</span><span class="token punctuation">,</span>
-    <span class="token string">'django.contrib.sessions'</span><span class="token punctuation">,</span>
-    <span class="token string">'django.contrib.messages'</span><span class="token punctuation">,</span>
-    <span class="token string">'django.contrib.staticfiles'</span><span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true"># 这里注册learn</span>
-    <span class="token string">'learn'</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre>
-<h3 id="配置templates"><a href="#配置templates" class="headerlink" title="配置templates"></a>配置templates</h3><p>在第一个HelloDjango文件夹下添加一个名为templates的文件夹，用于存放html并进行路径配置，如下：</p>
-<pre class=" language-python"><code class="language-python">TEMPLATES <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-        <span class="token string">'BACKEND'</span><span class="token punctuation">:</span> <span class="token string">'django.template.backends.django.DjangoTemplates'</span><span class="token punctuation">,</span>
-        <span class="token comment" spellcheck="true"># 添加路径</span>
-        <span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'APP_DIRS'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
-        <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            <span class="token string">'context_processors'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-                <span class="token string">'django.template.context_processors.debug'</span><span class="token punctuation">,</span>
-                <span class="token string">'django.template.context_processors.request'</span><span class="token punctuation">,</span>
-                <span class="token string">'django.contrib.auth.context_processors.auth'</span><span class="token punctuation">,</span>
-                <span class="token string">'django.contrib.messages.context_processors.messages'</span><span class="token punctuation">,</span>
-            <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre>
-<p>添加路径为</p>
-<pre class=" language-python"><code class="language-python"><span class="token string">'DIRS'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-            os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
-<h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>默认的数据库是sqlite，已经配置好的代码如下：</p>
-<pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.sqlite3'</span><span class="token punctuation">,</span>
-        <span class="token string">'NAME'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span> <span class="token string">'db.sqlite3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>连接mysql</p>
-<pre class=" language-python"><code class="language-python">DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-             <span class="token comment" spellcheck="true"># 把sqlite改成mysql</span>
-             <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>
-             <span class="token comment" spellcheck="true"># 填写数据库名称</span>
-             <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'test'</span><span class="token punctuation">,</span>
-             <span class="token comment" spellcheck="true"># 用户名称</span>
-             <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
-             <span class="token comment" spellcheck="true"># 密码</span>
-             <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'123456'</span><span class="token punctuation">,</span>
-             <span class="token comment" spellcheck="true"># 主机IP</span>
-             <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">'192.168.223.128'</span><span class="token punctuation">,</span>
-             <span class="token comment" spellcheck="true"># 端口号，默认3306</span>
-             <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token number">3306</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>这里还要在init.py中添加一个代码：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
-pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h3 id="配置语言"><a href="#配置语言" class="headerlink" title="配置语言"></a>配置语言</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 中文</span>
-LANGUAGE_CODE <span class="token operator">=</span> <span class="token string">'zh-hans'</span>
-<span class="token comment" spellcheck="true"># 时区，固定</span>
-TIME_ZONE <span class="token operator">=</span> <span class="token string">'Asia/Shanghai'</span>
-
-USE_I18N <span class="token operator">=</span> <span class="token boolean">True</span>
-
-USE_L10N <span class="token operator">=</span> <span class="token boolean">True</span>
-<span class="token comment" spellcheck="true"># 这里改成False</span>
-USE_TZ <span class="token operator">=</span> <span class="token boolean">False</span>
-<span class="token comment" spellcheck="true">### 配置static文件路径，存放css，js</span>
-在第一个HelloDjango文件夹下创建一个名为static的文件夹，在setting<span class="token punctuation">.</span>py最后添加如下代码：
-​```python
-STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctuation">[</span>
-    os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">,</span><span class="token string">'static'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre>
+                <h1 id="罗马数字转整数"><a href="#罗马数字转整数" class="headerlink" title="罗马数字转整数"></a>罗马数字转整数</h1><p><strong>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</strong><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0.jpg" alt="题目"><br><strong>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：<br>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。<br>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。<br>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</strong><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B01.jpg" alt="输出事例"><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B02.jpg" alt></p>
 
             </div>
             <hr/>
@@ -529,7 +445,7 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/02/26/django项目基本配置/">http://yoursite.com/2020/02/26/django项目基本配置/</a>
+                    <a href="http://yoursite.com/2020/03/06/罗马数字转整数/">http://yoursite.com/2020/03/06/罗马数字转整数/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +483,8 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -997,48 +913,48 @@ STATICFILES_DIRS <span class="token operator">=</span> <span class="token punctu
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/26/django路由分配/">
+                <a href="/2020/03/06/罗马数字转整数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="django路由分配">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="回文数">
                         
-                        <span class="card-title">django路由分配</span>
+                        <span class="card-title">回文数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            django路由分配总路由配置先创建一个app（python manage.py startapp App），找到urls.py，添加代码
-from django.conf.urls import url, include
-from dja
+                            罗马数字转整数罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/django1-9-13/" class="post-category">
-                                    django1.9.13
+                            <a href="/categories/每日一题/" class="post-category">
+                                    每日一题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -1052,34 +968,37 @@ from dja
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/24/django结构简介/">
+                <a href="/2020/03/04/回文数/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="django结构简介">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="回文数">
                         
-                        <span class="card-title">django结构简介</span>
+                        <span class="card-title">回文数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Django流程介绍又或者是这样的结构图：
-MVC结构MVC结构是众所周知的模式：
-M——model（模型）管理应用程序的状态（通常存储到数据库中），并约束改变状态的行为（或者叫做“业务规则”）。
-V——view（视图）负责把数据格式化后呈
+                            回文数
+代码解法一class Solution:
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        ""
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/django1-9-13/" class="post-category">
-                                    django1.9.13
+                            <a href="/categories/每日一题/" class="post-category">
+                                    每日一题
                                 </a>
                             
                             
@@ -1089,8 +1008,8 @@ V——view（视图）负责把数据格式化后呈
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>

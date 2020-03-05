@@ -5,6 +5,31 @@
     
     <entry>
       <title>回文数</title>
+      <link href="/2020/03/06/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
+      <url>/2020/03/06/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="罗马数字转整数"><a href="#罗马数字转整数" class="headerlink" title="罗马数字转整数"></a>罗马数字转整数</h1><p><strong>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</strong><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0.jpg" alt="题目"><br><strong>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：<br>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。<br>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。<br>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</strong><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B01.jpg" alt="输出事例"><br><img src="https://gitee.com/silent-666/images/raw/e3e1d24b46d9781caf30c1dc3773d5f278ca5c4b/leetcode/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B02.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回文数</title>
       <link href="/2020/03/04/%E5%9B%9E%E6%96%87%E6%95%B0/"/>
       <url>/2020/03/04/%E5%9B%9E%E6%96%87%E6%95%B0/</url>
       
