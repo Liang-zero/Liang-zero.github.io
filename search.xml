@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>和为s的连续正数序列</title>
+      <link href="/2020/03/06/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"/>
+      <url>/2020/03/06/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="和为s的连续正数序列"><a href="#和为s的连续正数序列" class="headerlink" title="和为s的连续正数序列"></a>和为s的连续正数序列</h1><p><img src="https://gitee.com/silent-666/images/raw/37a4fc9649f604797a82e7fdf8e971082797058d/leetcode/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97.jpg" alt="题目"></p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">findContinuousSequence</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token triple-quoted-string string">"""        :type target: int        :rtype: List[List[int]]        """</span>        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>        l <span class="token operator">=</span> <span class="token number">1</span>        r <span class="token operator">=</span> <span class="token number">2</span>        <span class="token keyword">while</span> l <span class="token operator">&lt;</span> r<span class="token punctuation">:</span>            a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>            sum <span class="token operator">=</span> <span class="token punctuation">(</span>r<span class="token operator">+</span>l<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span>            <span class="token keyword">if</span> sum <span class="token operator">&lt;</span> target<span class="token punctuation">:</span>                r <span class="token operator">+=</span> <span class="token number">1</span>            <span class="token keyword">elif</span> sum <span class="token operator">></span> target<span class="token punctuation">:</span>                l <span class="token operator">+=</span> <span class="token number">1</span>            <span class="token keyword">else</span><span class="token punctuation">:</span>                <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                    a<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>a<span class="token punctuation">)</span>                l <span class="token operator">+=</span> <span class="token number">1</span>        <span class="token keyword">return</span> res</code></pre><h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>运用到了滑动窗口算法<br>具体参考<a href="https://www.zhihu.com/topic/20746237/intro" target="_blank" rel="noopener">https://www.zhihu.com/topic/20746237/intro</a></p><p><img src="https://gitee.com/silent-666/images/raw/37a4fc9649f604797a82e7fdf8e971082797058d/leetcode/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%971.jpg" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每日一题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>罗马数字转整数</title>
       <link href="/2020/03/06/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
       <url>/2020/03/06/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</url>
